@@ -24,7 +24,9 @@ namespace SmokyMailerPro
         }
 
         readonly SmtpClient client = new SmtpClient();
-        int b = 0;
+        readonly int b = 0;
+
+
         private void BtnFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog
@@ -135,42 +137,19 @@ namespace SmokyMailerPro
                 CmbStyle.Items.Add(ff.Name.ToString());
                 
             }
-            if (CmbStyle.SelectedItem != null)
-            {
-                // on applique les changements.
-               this.RichTextBox1.SelectionFont = RichTextBox1.Font;
-               
-            }
             
         }
-            
-                
-           
 
-        
 
         private void CmbStyle_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                RichTextBox1.Font = new Font(CmbStyle.Text, RichTextBox1.Font.Size);
-            }
-            catch (Exception exi)
-            {
-                MessageBox.Show(exi.Message);
-            }
-        }
+            RichTextBox1.Font = new Font(CmbStyle.Text, RichTextBox1.Font.Size);
 
+        }
         private void CmbSize_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                RichTextBox1.Font = new Font(RichTextBox1.Font.FontFamily, float.Parse(CmbSize.SelectedItem.ToString()));
-            }
-            catch (Exception exce)
-            {
-                MessageBox.Show(exce.Message);
-            }
+            RichTextBox1.Font = new Font(RichTextBox1.Font.FontFamily, float.Parse(CmbSize.SelectedItem.ToString()));
+            
         }
 
 
@@ -185,6 +164,6 @@ namespace SmokyMailerPro
         {
             LblCount.Text = b.ToString();
         }
-    }
 
+    }
 }
