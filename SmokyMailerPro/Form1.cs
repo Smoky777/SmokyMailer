@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -24,8 +25,6 @@ namespace SmokyMailerPro
         }
 
         readonly SmtpClient client = new SmtpClient();
-        readonly int b = 0;
-
 
         private void BtnFile_Click(object sender, EventArgs e)
         {
@@ -79,8 +78,7 @@ namespace SmokyMailerPro
                 client.Connect(TxtHost.Text, int.Parse(TxtPort.Text));
                 client.Authenticate(TxtUser.Text, TxtPass.Text);
 
-                if (LstMail.Text != null)
-                {
+                
                     MimeMessage mime = new MimeMessage();
                     BodyBuilder builder = new BodyBuilder();
                     
@@ -101,19 +99,21 @@ namespace SmokyMailerPro
                         client.Send(mime);
                         Thread.Sleep(1000);
 
-                       
-                        int a = LstMail.Items.Count;
 
-                        int b = a * (int)numericUpDown1.Value; 
-
-                        LblCount.Text = b.ToString();
+                        
 
                     }
+                client.Disconnect(true);
 
-                    client.Disconnect(true);
+                    int a = LstMail.Items.Count;
+
+                    int b = a * (int)numericUpDown1.Value;
+
+                    LblCount.Text = b.ToString();
+                    
 
 
-                }
+                
             }
             catch (Exception exxi)
             {
@@ -125,6 +125,7 @@ namespace SmokyMailerPro
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
+           int b = 0;
             LstMail.Items.Clear();
             LblCount.Text = b.ToString();
             
@@ -162,6 +163,7 @@ namespace SmokyMailerPro
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
+            int b = 0;
             LblCount.Text = b.ToString();
         }
 
