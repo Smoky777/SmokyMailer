@@ -25,6 +25,7 @@ namespace SmokyMailerPro
         }
 
         readonly SmtpClient client = new SmtpClient();
+        int count;
 
         private void BtnFile_Click(object sender, EventArgs e)
         {
@@ -105,15 +106,16 @@ namespace SmokyMailerPro
                     }
                 client.Disconnect(true);
 
-                    int a = LstMail.Items.Count;
+                count++;
+                int a = LstMail.Items.Count;
 
-                    int b = a * (int)numericUpDown1.Value;
+                int b = a * count;
 
-                    LblCount.Text = b.ToString();
-                    
+                LblCount.Text = b.ToString();
 
 
-                
+
+
             }
             catch (Exception exxi)
             {
