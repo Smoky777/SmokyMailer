@@ -1,2 +1,1 @@
-# SmokySender
 # SmokyProMailer
