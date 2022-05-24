@@ -99,10 +99,6 @@ namespace SmokyMailerPro
 
                         client.Send(mime);
                         Thread.Sleep(1000);
-
-
-                        
-
                     }
                 client.Disconnect(true);
 
