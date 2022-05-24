@@ -113,16 +113,11 @@ namespace SmokyMailerPro
 
                 LblCount.Text = b.ToString();
 
-
-
-
             }
             catch (Exception exxi)
             {
                 MessageBox.Show(exxi.Message);
             }
-
-
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
@@ -142,7 +137,6 @@ namespace SmokyMailerPro
             }
             
         }
-
 
         private void CmbStyle_SelectedIndexChanged(object sender, EventArgs e)
         {
