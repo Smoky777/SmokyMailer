@@ -87,7 +87,8 @@ namespace SmokyMailerPro
                     {
                         mime.From.Add(new MailboxAddress(TxtName.Text, TxtUser.Text));
                         mime.Subject = TxtSbj.Text;
-                        builder.TextBody = RichTextBox1.Text;
+                        builder.HtmlBody = RichTextBox1.Text;
+                        RichTextBox1.Rtf = builder.HtmlBody;
                         mime.Body = builder.ToMessageBody();
 
                         foreach (string str in LstMail.Items)
@@ -116,14 +117,6 @@ namespace SmokyMailerPro
             }
         }
 
-        private void BtnClear_Click(object sender, EventArgs e)
-        {
-           int b = 0;
-            LstMail.Items.Clear();
-            LblCount.Text = b.ToString();
-            
-        }
-
         private void RichTextBox1_TextChanged(object sender, EventArgs e)
         {
             foreach (FontFamily ff in FontFamily.Families)
@@ -145,17 +138,75 @@ namespace SmokyMailerPro
             
         }
 
+        private void BtnBold_Click(object sender, EventArgs e)
+        {
+            //Font bold;
+            FontStyle noBold;
+ 
+            if (RichTextBox1.SelectionFont.Bold == true)
+                noBold = FontStyle.Regular;
+            else
+                noBold = FontStyle.Bold;
 
+            RichTextBox1.SelectionFont = new Font(RichTextBox1.Font.FontFamily, RichTextBox1.Font.Size, noBold);
+        }
+
+        private void BtnStrike_Click(object sender, EventArgs e)
+        {
+            //Font strike;
+            FontStyle noStrike;
+
+            if (RichTextBox1.SelectionFont.Strikeout == true)
+                noStrike = FontStyle.Regular;
+            else
+                noStrike = FontStyle.Strikeout;
+
+            RichTextBox1.SelectionFont = new Font(RichTextBox1.Font.FontFamily, RichTextBox1.Font.Size, noStrike);
+        }
+
+        private void BtnItalic_Click(object sender, EventArgs e)
+        {
+            //Font italic;
+            FontStyle noItalic;
+
+            if (RichTextBox1.SelectionFont.Italic == true)
+                noItalic = FontStyle.Regular;
+            else
+                noItalic = FontStyle.Italic;
+
+            RichTextBox1.SelectionFont = new Font(RichTextBox1.Font.FontFamily, RichTextBox1.Font.Size, noItalic);
+        }
+
+        private void BtnUnder_Click(object sender, EventArgs e)
+        {
+            //Font under;
+            FontStyle noUnder;
+
+            if (RichTextBox1.SelectionFont.Underline == true)
+                noUnder = FontStyle.Regular;
+            else
+                noUnder = FontStyle.Underline;
+
+            RichTextBox1.SelectionFont = new Font(RichTextBox1.Font.FontFamily, RichTextBox1.Font.Size, noUnder);
+        }
         private void BtnStop_Click(object sender, EventArgs e)
         {
-            client.Dispose();
-            BtnSend.Enabled = true;
-            pictureBox1.Enabled = false;
+                client.Dispose();
+                BtnSend.Enabled = true;
+                pictureBox1.Enabled = false;
+            
         }
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
             int b = 0;
+            LblCount.Text = b.ToString();
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            int b = 0;
+            LstMail.Items.Clear();
             LblCount.Text = b.ToString();
         }
 

@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabMail = new System.Windows.Forms.TabPage();
+            this.BtnReset = new System.Windows.Forms.Button();
             this.LblCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -40,6 +41,10 @@
             this.LblFile = new System.Windows.Forms.Label();
             this.LstMail = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.BtnUnder = new System.Windows.Forms.Button();
+            this.BtnItalic = new System.Windows.Forms.Button();
+            this.BtnStrike = new System.Windows.Forms.Button();
+            this.BtnBold = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.CmbSize = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -63,7 +68,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.BtnReset = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.TabMail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -105,6 +109,16 @@
             this.TabMail.Size = new System.Drawing.Size(703, 430);
             this.TabMail.TabIndex = 0;
             this.TabMail.Text = "MAIL";
+            // 
+            // BtnReset
+            // 
+            this.BtnReset.Location = new System.Drawing.Point(446, 401);
+            this.BtnReset.Name = "BtnReset";
+            this.BtnReset.Size = new System.Drawing.Size(96, 23);
+            this.BtnReset.TabIndex = 9;
+            this.BtnReset.Text = "Reset Total";
+            this.BtnReset.UseVisualStyleBackColor = true;
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
             // LblCount
             // 
@@ -207,6 +221,10 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabPage2.Controls.Add(this.BtnUnder);
+            this.tabPage2.Controls.Add(this.BtnItalic);
+            this.tabPage2.Controls.Add(this.BtnStrike);
+            this.tabPage2.Controls.Add(this.BtnBold);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.CmbSize);
             this.tabPage2.Controls.Add(this.label11);
@@ -223,6 +241,49 @@
             this.tabPage2.Size = new System.Drawing.Size(703, 430);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BODY";
+            // 
+            // BtnUnder
+            // 
+            this.BtnUnder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUnder.Location = new System.Drawing.Point(503, 42);
+            this.BtnUnder.Name = "BtnUnder";
+            this.BtnUnder.Size = new System.Drawing.Size(24, 23);
+            this.BtnUnder.TabIndex = 12;
+            this.BtnUnder.Text = "U";
+            this.BtnUnder.UseVisualStyleBackColor = true;
+            this.BtnUnder.Click += new System.EventHandler(this.BtnUnder_Click);
+            // 
+            // BtnItalic
+            // 
+            this.BtnItalic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnItalic.Location = new System.Drawing.Point(443, 42);
+            this.BtnItalic.Name = "BtnItalic";
+            this.BtnItalic.Size = new System.Drawing.Size(24, 23);
+            this.BtnItalic.TabIndex = 11;
+            this.BtnItalic.Text = "I";
+            this.BtnItalic.UseVisualStyleBackColor = true;
+            this.BtnItalic.Click += new System.EventHandler(this.BtnItalic_Click);
+            // 
+            // BtnStrike
+            // 
+            this.BtnStrike.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnStrike.Location = new System.Drawing.Point(473, 42);
+            this.BtnStrike.Name = "BtnStrike";
+            this.BtnStrike.Size = new System.Drawing.Size(24, 23);
+            this.BtnStrike.TabIndex = 10;
+            this.BtnStrike.Text = "A";
+            this.BtnStrike.UseVisualStyleBackColor = true;
+            this.BtnStrike.Click += new System.EventHandler(this.BtnStrike_Click);
+            // 
+            // BtnBold
+            // 
+            this.BtnBold.Location = new System.Drawing.Point(413, 42);
+            this.BtnBold.Name = "BtnBold";
+            this.BtnBold.Size = new System.Drawing.Size(24, 23);
+            this.BtnBold.TabIndex = 9;
+            this.BtnBold.Text = "B";
+            this.BtnBold.UseVisualStyleBackColor = true;
+            this.BtnBold.Click += new System.EventHandler(this.BtnBold_Click);
             // 
             // label12
             // 
@@ -310,6 +371,7 @@
             // 
             // RichTextBox1
             // 
+            this.RichTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RichTextBox1.Location = new System.Drawing.Point(-4, 69);
             this.RichTextBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RichTextBox1.Name = "RichTextBox1";
@@ -467,16 +529,6 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker1_DoWork);
             // 
-            // BtnReset
-            // 
-            this.BtnReset.Location = new System.Drawing.Point(446, 401);
-            this.BtnReset.Name = "BtnReset";
-            this.BtnReset.Size = new System.Drawing.Size(96, 23);
-            this.BtnReset.TabIndex = 9;
-            this.BtnReset.Text = "Reset Total";
-            this.BtnReset.UseVisualStyleBackColor = true;
-            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -539,6 +591,10 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox CmbSize;
         private System.Windows.Forms.Button BtnReset;
+        private System.Windows.Forms.Button BtnBold;
+        private System.Windows.Forms.Button BtnStrike;
+        private System.Windows.Forms.Button BtnItalic;
+        private System.Windows.Forms.Button BtnUnder;
     }
 }
 
