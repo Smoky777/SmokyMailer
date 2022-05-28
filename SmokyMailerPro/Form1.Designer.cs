@@ -41,6 +41,8 @@
             this.LblFile = new System.Windows.Forms.Label();
             this.LstMail = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.TxtFile = new System.Windows.Forms.TextBox();
+            this.BtnAttach = new System.Windows.Forms.Button();
             this.BtnUnder = new System.Windows.Forms.Button();
             this.BtnItalic = new System.Windows.Forms.Button();
             this.BtnStrike = new System.Windows.Forms.Button();
@@ -54,6 +56,7 @@
             this.TxtSbj = new System.Windows.Forms.TextBox();
             this.RichTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.BtnSmtp = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.CheckSsl = new System.Windows.Forms.CheckBox();
@@ -221,6 +224,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabPage2.Controls.Add(this.TxtFile);
+            this.tabPage2.Controls.Add(this.BtnAttach);
             this.tabPage2.Controls.Add(this.BtnUnder);
             this.tabPage2.Controls.Add(this.BtnItalic);
             this.tabPage2.Controls.Add(this.BtnStrike);
@@ -241,6 +246,24 @@
             this.tabPage2.Size = new System.Drawing.Size(703, 430);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BODY";
+            // 
+            // TxtFile
+            // 
+            this.TxtFile.Location = new System.Drawing.Point(592, 10);
+            this.TxtFile.Name = "TxtFile";
+            this.TxtFile.ReadOnly = true;
+            this.TxtFile.Size = new System.Drawing.Size(108, 22);
+            this.TxtFile.TabIndex = 14;
+            // 
+            // BtnAttach
+            // 
+            this.BtnAttach.Location = new System.Drawing.Point(534, 10);
+            this.BtnAttach.Name = "BtnAttach";
+            this.BtnAttach.Size = new System.Drawing.Size(52, 23);
+            this.BtnAttach.TabIndex = 13;
+            this.BtnAttach.Text = "File";
+            this.BtnAttach.UseVisualStyleBackColor = true;
+            this.BtnAttach.Click += new System.EventHandler(this.BtnAttach_Click);
             // 
             // BtnUnder
             // 
@@ -363,10 +386,10 @@
             // 
             // TxtSbj
             // 
-            this.TxtSbj.Location = new System.Drawing.Point(88, 10);
+            this.TxtSbj.Location = new System.Drawing.Point(77, 10);
             this.TxtSbj.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtSbj.Name = "TxtSbj";
-            this.TxtSbj.Size = new System.Drawing.Size(586, 22);
+            this.TxtSbj.Size = new System.Drawing.Size(450, 22);
             this.TxtSbj.TabIndex = 2;
             // 
             // RichTextBox1
@@ -384,6 +407,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabPage3.Controls.Add(this.BtnSmtp);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.numericUpDown1);
             this.tabPage3.Controls.Add(this.CheckSsl);
@@ -405,6 +429,16 @@
             this.tabPage3.Size = new System.Drawing.Size(703, 430);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "SETTINGS";
+            // 
+            // BtnSmtp
+            // 
+            this.BtnSmtp.Location = new System.Drawing.Point(133, 385);
+            this.BtnSmtp.Name = "BtnSmtp";
+            this.BtnSmtp.Size = new System.Drawing.Size(75, 23);
+            this.BtnSmtp.TabIndex = 13;
+            this.BtnSmtp.Text = "Clear";
+            this.BtnSmtp.UseVisualStyleBackColor = true;
+            this.BtnSmtp.Click += new System.EventHandler(this.BtnSmtp_Click);
             // 
             // label10
             // 
@@ -434,6 +468,7 @@
             this.CheckSsl.TabIndex = 10;
             this.CheckSsl.Text = "SSL";
             this.CheckSsl.UseVisualStyleBackColor = true;
+            this.CheckSsl.CheckedChanged += new System.EventHandler(this.CheckSsl_CheckedChanged);
             // 
             // TxtPort
             // 
@@ -595,6 +630,9 @@
         private System.Windows.Forms.Button BtnStrike;
         private System.Windows.Forms.Button BtnItalic;
         private System.Windows.Forms.Button BtnUnder;
+        private System.Windows.Forms.Button BtnAttach;
+        private System.Windows.Forms.TextBox TxtFile;
+        private System.Windows.Forms.Button BtnSmtp;
     }
 }
 

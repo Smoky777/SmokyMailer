@@ -87,14 +87,18 @@ namespace SmokyMailerPro
                     {
                         mime.From.Add(new MailboxAddress(TxtName.Text, TxtUser.Text));
                         mime.Subject = TxtSbj.Text;
-                        builder.HtmlBody = RichTextBox1.Text;
-                        RichTextBox1.Rtf = builder.HtmlBody;
-                        mime.Body = builder.ToMessageBody();
+                        builder.TextBody = RichTextBox1.Text;
 
-                        foreach (string str in LstMail.Items)
+                    if (fl.FileName != string.Empty)
+                    {
+                        builder.Attachments.Add(@fl.FileName);
+                    }
+                    mime.Body = builder.ToMessageBody();
+
+                    foreach (string str in LstMail.Items)
                         {
                            
-                            mime.To.Add(MailboxAddress.Parse(str));
+                           mime.To.Add(MailboxAddress.Parse(str));
 
                         }
 
@@ -199,16 +203,49 @@ namespace SmokyMailerPro
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
-            int b = 0;
-            LblCount.Text = b.ToString();
+            LblCount.Text = "0";
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
-            int b = 0;
             LstMail.Items.Clear();
-            LblCount.Text = b.ToString();
+            LblCount.Text = "0";
         }
 
+        readonly OpenFileDialog fl = new OpenFileDialog();
+        
+        private void BtnAttach_Click(object sender, EventArgs e)
+        {
+             fl.Multiselect = false;
+             fl.Filter = "All Files (*.*)|*.*";
+
+            
+            DialogResult dl = fl.ShowDialog();
+
+            if (dl == DialogResult.OK)
+            {
+                StreamReader sr = new StreamReader(@fl.FileName);
+                TxtFile.Text = fl.FileName;
+                sr.Close();
+            }
+            
+        }
+
+        private void BtnSmtp_Click(object sender, EventArgs e)
+        {
+            TxtHost.Clear();
+            TxtUser.Clear();
+            TxtName.Clear();
+            TxtPass.Clear();
+            TxtPort.Clear();
+            numericUpDown1.Value = 0;
+        }
+
+        private void CheckSsl_CheckedChanged(object sender, EventArgs e)
+        {
+            SmtpClient client1 = new SmtpClient();
+            if (CheckSsl.Checked)
+                client1.SslProtocols = System.Security.Authentication.SslProtocols.Default;
+        }
     }
 }
