@@ -71,6 +71,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.BtnClr = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.TabMail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -81,6 +82,7 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tabControl1.Controls.Add(this.TabMail);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -105,11 +107,11 @@
             this.TabMail.Controls.Add(this.LblFile);
             this.TabMail.Controls.Add(this.LstMail);
             this.TabMail.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabMail.Location = new System.Drawing.Point(4, 22);
+            this.TabMail.Location = new System.Drawing.Point(4, 25);
             this.TabMail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TabMail.Name = "TabMail";
             this.TabMail.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TabMail.Size = new System.Drawing.Size(703, 430);
+            this.TabMail.Size = new System.Drawing.Size(703, 427);
             this.TabMail.TabIndex = 0;
             this.TabMail.Text = "MAIL";
             // 
@@ -224,6 +226,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabPage2.Controls.Add(this.BtnClr);
             this.tabPage2.Controls.Add(this.TxtFile);
             this.tabPage2.Controls.Add(this.BtnAttach);
             this.tabPage2.Controls.Add(this.BtnUnder);
@@ -239,25 +242,25 @@
             this.tabPage2.Controls.Add(this.TxtSbj);
             this.tabPage2.Controls.Add(this.RichTextBox1);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(703, 430);
+            this.tabPage2.Size = new System.Drawing.Size(703, 427);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BODY";
             // 
             // TxtFile
             // 
-            this.TxtFile.Location = new System.Drawing.Point(592, 10);
+            this.TxtFile.Location = new System.Drawing.Point(483, 10);
             this.TxtFile.Name = "TxtFile";
             this.TxtFile.ReadOnly = true;
-            this.TxtFile.Size = new System.Drawing.Size(108, 22);
+            this.TxtFile.Size = new System.Drawing.Size(217, 22);
             this.TxtFile.TabIndex = 14;
             // 
             // BtnAttach
             // 
-            this.BtnAttach.Location = new System.Drawing.Point(534, 10);
+            this.BtnAttach.Location = new System.Drawing.Point(425, 10);
             this.BtnAttach.Name = "BtnAttach";
             this.BtnAttach.Size = new System.Drawing.Size(52, 23);
             this.BtnAttach.TabIndex = 13;
@@ -389,7 +392,7 @@
             this.TxtSbj.Location = new System.Drawing.Point(77, 10);
             this.TxtSbj.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtSbj.Name = "TxtSbj";
-            this.TxtSbj.Size = new System.Drawing.Size(450, 22);
+            this.TxtSbj.Size = new System.Drawing.Size(260, 22);
             this.TxtSbj.TabIndex = 2;
             // 
             // RichTextBox1
@@ -422,11 +425,11 @@
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.label5);
             this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage3.Size = new System.Drawing.Size(703, 430);
+            this.tabPage3.Size = new System.Drawing.Size(703, 427);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "SETTINGS";
             // 
@@ -564,6 +567,16 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker1_DoWork);
             // 
+            // BtnClr
+            // 
+            this.BtnClr.Location = new System.Drawing.Point(344, 10);
+            this.BtnClr.Name = "BtnClr";
+            this.BtnClr.Size = new System.Drawing.Size(75, 23);
+            this.BtnClr.TabIndex = 15;
+            this.BtnClr.Text = "Color";
+            this.BtnClr.UseVisualStyleBackColor = true;
+            this.BtnClr.Click += new System.EventHandler(this.BtnClr_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -633,6 +646,7 @@
         private System.Windows.Forms.Button BtnAttach;
         private System.Windows.Forms.TextBox TxtFile;
         private System.Windows.Forms.Button BtnSmtp;
+        private System.Windows.Forms.Button BtnClr;
     }
 }
 

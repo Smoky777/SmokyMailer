@@ -144,7 +144,6 @@ namespace SmokyMailerPro
 
         private void BtnBold_Click(object sender, EventArgs e)
         {
-            //Font bold;
             FontStyle noBold;
  
             if (RichTextBox1.SelectionFont.Bold == true)
@@ -157,7 +156,6 @@ namespace SmokyMailerPro
 
         private void BtnStrike_Click(object sender, EventArgs e)
         {
-            //Font strike;
             FontStyle noStrike;
 
             if (RichTextBox1.SelectionFont.Strikeout == true)
@@ -170,7 +168,6 @@ namespace SmokyMailerPro
 
         private void BtnItalic_Click(object sender, EventArgs e)
         {
-            //Font italic;
             FontStyle noItalic;
 
             if (RichTextBox1.SelectionFont.Italic == true)
@@ -183,7 +180,6 @@ namespace SmokyMailerPro
 
         private void BtnUnder_Click(object sender, EventArgs e)
         {
-            //Font under;
             FontStyle noUnder;
 
             if (RichTextBox1.SelectionFont.Underline == true)
@@ -246,6 +242,16 @@ namespace SmokyMailerPro
             SmtpClient client1 = new SmtpClient();
             if (CheckSsl.Checked)
                 client1.SslProtocols = System.Security.Authentication.SslProtocols.Default;
+        }
+
+        private void BtnClr_Click(object sender, EventArgs e)
+        {
+            ColorDialog color = new ColorDialog();
+            DialogResult dr = color.ShowDialog();
+
+            if (dr == DialogResult.OK)
+                RichTextBox1.SelectionColor = color.Color;
+                
         }
     }
 }
