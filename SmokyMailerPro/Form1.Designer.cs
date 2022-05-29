@@ -118,7 +118,7 @@
             this.TabMail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TabMail.Name = "TabMail";
             this.TabMail.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TabMail.Size = new System.Drawing.Size(769, 439);
+            this.TabMail.Size = new System.Drawing.Size(771, 440);
             this.TabMail.TabIndex = 0;
             this.TabMail.Text = "MAIL";
             // 

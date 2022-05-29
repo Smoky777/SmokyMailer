@@ -97,7 +97,7 @@ namespace SmokyMailerPro
                 {
                     mime.From.Add(new MailboxAddress(TxtName.Text, TxtUser.Text));
                     mime.Subject = TxtSbj.Text;
-                    builder.TextBody = RichTextBox1.Text;
+                    builder.HtmlBody = RichTextBox1.Text;
 
                     if (TxtFile.Text != string.Empty)
                     {
