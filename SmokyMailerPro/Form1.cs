@@ -109,6 +109,7 @@ namespace SmokyMailerPro
                         client.Send(mime);
                         Thread.Sleep(1000);
 
+                        LblDone.Enabled = true;
                         count++;
                         int a = LstMail.Items.Count;
 
@@ -122,6 +123,7 @@ namespace SmokyMailerPro
                         mime.To.Add(MailboxAddress.Parse(TxtTo.Text));
                         client.Send(mime);
                         Thread.Sleep(1000);
+                        LblDone.Enabled = true;
                         LblCount.Text = "1";
                     }
                     

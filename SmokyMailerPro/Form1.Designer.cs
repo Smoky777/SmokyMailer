@@ -74,6 +74,7 @@
             this.BtnClr = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtTo = new System.Windows.Forms.TextBox();
+            this.LblDone = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.TabMail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,12 +93,13 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(711, 456);
+            this.tabControl1.Size = new System.Drawing.Size(714, 455);
             this.tabControl1.TabIndex = 0;
             // 
             // TabMail
             // 
             this.TabMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TabMail.Controls.Add(this.LblDone);
             this.TabMail.Controls.Add(this.TxtTo);
             this.TabMail.Controls.Add(this.label1);
             this.TabMail.Controls.Add(this.BtnReset);
@@ -115,15 +117,15 @@
             this.TabMail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TabMail.Name = "TabMail";
             this.TabMail.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TabMail.Size = new System.Drawing.Size(703, 427);
+            this.TabMail.Size = new System.Drawing.Size(706, 426);
             this.TabMail.TabIndex = 0;
             this.TabMail.Text = "MAIL";
             // 
             // BtnReset
             // 
-            this.BtnReset.Location = new System.Drawing.Point(446, 401);
+            this.BtnReset.Location = new System.Drawing.Point(440, 394);
             this.BtnReset.Name = "BtnReset";
-            this.BtnReset.Size = new System.Drawing.Size(96, 23);
+            this.BtnReset.Size = new System.Drawing.Size(96, 26);
             this.BtnReset.TabIndex = 9;
             this.BtnReset.Text = "Reset Total";
             this.BtnReset.UseVisualStyleBackColor = true;
@@ -133,7 +135,7 @@
             // 
             this.LblCount.AutoSize = true;
             this.LblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCount.Location = new System.Drawing.Point(405, 404);
+            this.LblCount.Location = new System.Drawing.Point(405, 396);
             this.LblCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblCount.Name = "LblCount";
             this.LblCount.Size = new System.Drawing.Size(19, 20);
@@ -144,7 +146,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(300, 404);
+            this.label2.Location = new System.Drawing.Point(300, 396);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 20);
@@ -221,10 +223,10 @@
             // 
             this.LstMail.FormattingEnabled = true;
             this.LstMail.ItemHeight = 17;
-            this.LstMail.Location = new System.Drawing.Point(0, 33);
+            this.LstMail.Location = new System.Drawing.Point(-4, 33);
             this.LstMail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.LstMail.Name = "LstMail";
-            this.LstMail.Size = new System.Drawing.Size(292, 395);
+            this.LstMail.Size = new System.Drawing.Size(296, 395);
             this.LstMail.TabIndex = 0;
             // 
             // tabPage2
@@ -250,7 +252,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(703, 427);
+            this.tabPage2.Size = new System.Drawing.Size(706, 426);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BODY";
             // 
@@ -406,7 +408,7 @@
             this.RichTextBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RichTextBox1.Name = "RichTextBox1";
             this.RichTextBox1.ShowSelectionMargin = true;
-            this.RichTextBox1.Size = new System.Drawing.Size(707, 365);
+            this.RichTextBox1.Size = new System.Drawing.Size(714, 365);
             this.RichTextBox1.TabIndex = 0;
             this.RichTextBox1.Text = "";
             this.RichTextBox1.TextChanged += new System.EventHandler(this.RichTextBox1_TextChanged);
@@ -597,11 +599,22 @@
             this.TxtTo.Size = new System.Drawing.Size(277, 25);
             this.TxtTo.TabIndex = 11;
             // 
+            // LblDone
+            // 
+            this.LblDone.AutoSize = true;
+            this.LblDone.Font = new System.Drawing.Font("Microsoft New Tai Lue", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDone.Location = new System.Drawing.Point(363, 329);
+            this.LblDone.Name = "LblDone";
+            this.LblDone.Size = new System.Drawing.Size(246, 43);
+            this.LblDone.TabIndex = 12;
+            this.LblDone.Text = "WORK DONE!!!";
+            this.LblDone.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 460);
+            this.ClientSize = new System.Drawing.Size(716, 458);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -669,6 +682,7 @@
         private System.Windows.Forms.Button BtnClr;
         private System.Windows.Forms.TextBox TxtTo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblDone;
     }
 }
 
