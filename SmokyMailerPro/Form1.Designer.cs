@@ -30,6 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabMail = new System.Windows.Forms.TabPage();
+            this.LblDone = new System.Windows.Forms.Label();
+            this.TxtTo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.BtnReset = new System.Windows.Forms.Button();
             this.LblCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,6 +44,7 @@
             this.LblFile = new System.Windows.Forms.Label();
             this.LstMail = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.BtnClr = new System.Windows.Forms.Button();
             this.TxtFile = new System.Windows.Forms.TextBox();
             this.BtnAttach = new System.Windows.Forms.Button();
             this.BtnUnder = new System.Windows.Forms.Button();
@@ -71,10 +75,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.BtnClr = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TxtTo = new System.Windows.Forms.TextBox();
-            this.LblDone = new System.Windows.Forms.Label();
+            this.BtnClf = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.TabMail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,11 +90,11 @@
             this.tabControl1.Controls.Add(this.TabMail);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(2, 1);
+            this.tabControl1.Location = new System.Drawing.Point(-2, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(714, 455);
+            this.tabControl1.Size = new System.Drawing.Size(779, 469);
             this.tabControl1.TabIndex = 0;
             // 
             // TabMail
@@ -117,12 +118,40 @@
             this.TabMail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TabMail.Name = "TabMail";
             this.TabMail.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TabMail.Size = new System.Drawing.Size(706, 426);
+            this.TabMail.Size = new System.Drawing.Size(769, 439);
             this.TabMail.TabIndex = 0;
             this.TabMail.Text = "MAIL";
             // 
+            // LblDone
+            // 
+            this.LblDone.AutoSize = true;
+            this.LblDone.Font = new System.Drawing.Font("Microsoft New Tai Lue", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDone.Location = new System.Drawing.Point(363, 329);
+            this.LblDone.Name = "LblDone";
+            this.LblDone.Size = new System.Drawing.Size(246, 43);
+            this.LblDone.TabIndex = 12;
+            this.LblDone.Text = "WORK DONE!!!";
+            this.LblDone.Visible = false;
+            // 
+            // TxtTo
+            // 
+            this.TxtTo.Location = new System.Drawing.Point(225, 7);
+            this.TxtTo.Name = "TxtTo";
+            this.TxtTo.Size = new System.Drawing.Size(277, 25);
+            this.TxtTo.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(163, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 17);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Mail To";
+            // 
             // BtnReset
             // 
+            this.BtnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReset.Location = new System.Drawing.Point(440, 394);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(96, 26);
@@ -167,6 +196,7 @@
             // 
             // BtnClear
             // 
+            this.BtnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnClear.Location = new System.Drawing.Point(640, 7);
             this.BtnClear.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnClear.Name = "BtnClear";
@@ -178,6 +208,7 @@
             // 
             // BtnStop
             // 
+            this.BtnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnStop.Location = new System.Drawing.Point(578, 7);
             this.BtnStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnStop.Name = "BtnStop";
@@ -189,6 +220,7 @@
             // 
             // BtnSend
             // 
+            this.BtnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSend.Location = new System.Drawing.Point(509, 7);
             this.BtnSend.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnSend.Name = "BtnSend";
@@ -200,6 +232,7 @@
             // 
             // BtnFile
             // 
+            this.BtnFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnFile.Location = new System.Drawing.Point(80, 7);
             this.BtnFile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnFile.Name = "BtnFile";
@@ -226,12 +259,13 @@
             this.LstMail.Location = new System.Drawing.Point(-4, 33);
             this.LstMail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.LstMail.Name = "LstMail";
-            this.LstMail.Size = new System.Drawing.Size(296, 395);
+            this.LstMail.Size = new System.Drawing.Size(296, 412);
             this.LstMail.TabIndex = 0;
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabPage2.Controls.Add(this.BtnClf);
             this.tabPage2.Controls.Add(this.BtnClr);
             this.tabPage2.Controls.Add(this.TxtFile);
             this.tabPage2.Controls.Add(this.BtnAttach);
@@ -252,9 +286,20 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(706, 426);
+            this.tabPage2.Size = new System.Drawing.Size(771, 440);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BODY";
+            // 
+            // BtnClr
+            // 
+            this.BtnClr.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnClr.Location = new System.Drawing.Point(344, 10);
+            this.BtnClr.Name = "BtnClr";
+            this.BtnClr.Size = new System.Drawing.Size(75, 23);
+            this.BtnClr.TabIndex = 15;
+            this.BtnClr.Text = "Color";
+            this.BtnClr.UseVisualStyleBackColor = true;
+            this.BtnClr.Click += new System.EventHandler(this.BtnClr_Click);
             // 
             // TxtFile
             // 
@@ -266,6 +311,7 @@
             // 
             // BtnAttach
             // 
+            this.BtnAttach.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAttach.Location = new System.Drawing.Point(425, 10);
             this.BtnAttach.Name = "BtnAttach";
             this.BtnAttach.Size = new System.Drawing.Size(52, 23);
@@ -322,9 +368,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(291, 47);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 16);
+            this.label12.Size = new System.Drawing.Size(41, 16);
             this.label12.TabIndex = 8;
-            this.label12.Text = "Size";
+            this.label12.Text = "Size:";
             // 
             // CmbSize
             // 
@@ -358,9 +404,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(89, 47);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(42, 16);
+            this.label11.Size = new System.Drawing.Size(46, 16);
             this.label11.TabIndex = 6;
-            this.label11.Text = "Style";
+            this.label11.Text = "Style:";
             // 
             // CmbStyle
             // 
@@ -404,11 +450,11 @@
             // RichTextBox1
             // 
             this.RichTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RichTextBox1.Location = new System.Drawing.Point(-4, 69);
+            this.RichTextBox1.Location = new System.Drawing.Point(0, 69);
             this.RichTextBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RichTextBox1.Name = "RichTextBox1";
             this.RichTextBox1.ShowSelectionMargin = true;
-            this.RichTextBox1.Size = new System.Drawing.Size(714, 365);
+            this.RichTextBox1.Size = new System.Drawing.Size(769, 374);
             this.RichTextBox1.TabIndex = 0;
             this.RichTextBox1.Text = "";
             this.RichTextBox1.TextChanged += new System.EventHandler(this.RichTextBox1_TextChanged);
@@ -435,12 +481,13 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage3.Size = new System.Drawing.Size(703, 427);
+            this.tabPage3.Size = new System.Drawing.Size(771, 440);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "SETTINGS";
             // 
             // BtnSmtp
             // 
+            this.BtnSmtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSmtp.Location = new System.Drawing.Point(133, 385);
             this.BtnSmtp.Name = "BtnSmtp";
             this.BtnSmtp.Size = new System.Drawing.Size(75, 23);
@@ -573,51 +620,26 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker1_DoWork);
             // 
-            // BtnClr
+            // BtnClf
             // 
-            this.BtnClr.Location = new System.Drawing.Point(344, 10);
-            this.BtnClr.Name = "BtnClr";
-            this.BtnClr.Size = new System.Drawing.Size(75, 23);
-            this.BtnClr.TabIndex = 15;
-            this.BtnClr.Text = "Color";
-            this.BtnClr.UseVisualStyleBackColor = true;
-            this.BtnClr.Click += new System.EventHandler(this.BtnClr_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(163, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 17);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Mail To";
-            // 
-            // TxtTo
-            // 
-            this.TxtTo.Location = new System.Drawing.Point(225, 7);
-            this.TxtTo.Name = "TxtTo";
-            this.TxtTo.Size = new System.Drawing.Size(277, 25);
-            this.TxtTo.TabIndex = 11;
-            // 
-            // LblDone
-            // 
-            this.LblDone.AutoSize = true;
-            this.LblDone.Font = new System.Drawing.Font("Microsoft New Tai Lue", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDone.Location = new System.Drawing.Point(363, 329);
-            this.LblDone.Name = "LblDone";
-            this.LblDone.Size = new System.Drawing.Size(246, 43);
-            this.LblDone.TabIndex = 12;
-            this.LblDone.Text = "WORK DONE!!!";
-            this.LblDone.Visible = false;
+            this.BtnClf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnClf.Location = new System.Drawing.Point(706, 9);
+            this.BtnClf.Name = "BtnClf";
+            this.BtnClf.Size = new System.Drawing.Size(52, 23);
+            this.BtnClf.TabIndex = 16;
+            this.BtnClf.Text = "Clear";
+            this.BtnClf.UseVisualStyleBackColor = true;
+            this.BtnClf.Click += new System.EventHandler(this.BtnClf_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 458);
+            this.ClientSize = new System.Drawing.Size(775, 467);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SmokyMailerPro";
@@ -683,6 +705,7 @@
         private System.Windows.Forms.TextBox TxtTo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LblDone;
+        private System.Windows.Forms.Button BtnClf;
     }
 }
 

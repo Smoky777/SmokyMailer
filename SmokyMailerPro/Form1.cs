@@ -30,26 +30,34 @@ namespace SmokyMailerPro
 
         private void BtnFile_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog
+            try
             {
-                Multiselect = false,
-                Filter = "TEXT Files(*.txt)|*.txt|CSV Files(*.csv)|*.csv"
-            };
-
-            DialogResult dial = ofd.ShowDialog();
-
-            if (dial == DialogResult.OK)
-            {
-                StreamReader sr = new StreamReader(@ofd.FileName);
-                string line;
-
-                while ((line = sr.ReadLine()) != null)
+                OpenFileDialog ofd = new OpenFileDialog
                 {
-                    LstMail.Items.Add(line);
-                }
+                    Multiselect = false,
+                    Filter = "TEXT Files(*.txt)|*.txt|CSV Files(*.csv)|*.csv"
+                };
 
-                sr.Close();
+                DialogResult dial = ofd.ShowDialog();
+
+                if (dial == DialogResult.OK)
+                {
+                    StreamReader sr = new StreamReader(@ofd.FileName);
+                    string line;
+
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        LstMail.Items.Add(line);
+                    }
+
+                    sr.Close();
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void BtnSend_Click(object sender, EventArgs e)
@@ -91,11 +99,16 @@ namespace SmokyMailerPro
                     mime.Subject = TxtSbj.Text;
                     builder.TextBody = RichTextBox1.Text;
 
-                    if (fl.FileName != string.Empty)
+                    if (TxtFile.Text != string.Empty)
                     {
                         builder.Attachments.Add(@fl.FileName);
+                        mime.Body = builder.ToMessageBody();
                     }
-                    mime.Body = builder.ToMessageBody();
+                    else
+                    {
+                        mime.Body = builder.ToMessageBody();
+                    }
+                    
 
                     if (LstMail.Items.Count > 0)
                     {
@@ -109,7 +122,7 @@ namespace SmokyMailerPro
                         client.Send(mime);
                         Thread.Sleep(1000);
 
-                        LblDone.Enabled = true;
+                        LblDone.Visible = true;
                         count++;
                         int a = LstMail.Items.Count;
 
@@ -131,9 +144,9 @@ namespace SmokyMailerPro
                 client.Disconnect(true);
 
             }
-            catch (Exception exxi)
+            catch (Exception ex)
             {
-                MessageBox.Show(exxi.Message);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -210,18 +223,23 @@ namespace SmokyMailerPro
             client.Dispose();
             BtnSend.Enabled = true;
             pictureBox1.Enabled = false;
+            LblDone.Visible = false;
 
         }
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
             LblCount.Text = "0";
+            count = 0;
+            LblDone.Visible = false;
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
             LstMail.Items.Clear();
+            TxtTo.Clear();
             LblCount.Text = "0";
+            count = 0;
         }
 
         readonly OpenFileDialog fl = new OpenFileDialog();
@@ -268,6 +286,11 @@ namespace SmokyMailerPro
             if (dr == DialogResult.OK)
                 RichTextBox1.SelectionColor = color.Color;
 
+        }
+
+        private void BtnClf_Click(object sender, EventArgs e)
+        {
+            TxtFile.Clear();
         }
     }
 }
