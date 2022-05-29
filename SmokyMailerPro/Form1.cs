@@ -15,6 +15,7 @@ using System.Web;
 using MimeKit.Text;
 using MailKit.Net.Smtp;
 
+
 namespace SmokyMailerPro
 {
     public partial class Form1 : Form
@@ -37,12 +38,12 @@ namespace SmokyMailerPro
 
             DialogResult dial = ofd.ShowDialog();
 
-            if( dial == DialogResult.OK )
+            if (dial == DialogResult.OK)
             {
                 StreamReader sr = new StreamReader(@ofd.FileName);
                 string line;
-                
-                while((line = sr.ReadLine()) != null)
+
+                while ((line = sr.ReadLine()) != null)
                 {
                     LstMail.Items.Add(line);
                 }
@@ -79,15 +80,16 @@ namespace SmokyMailerPro
                 client.Connect(TxtHost.Text, int.Parse(TxtPort.Text));
                 client.Authenticate(TxtUser.Text, TxtPass.Text);
 
-                
-                    MimeMessage mime = new MimeMessage();
-                    BodyBuilder builder = new BodyBuilder();
-                    
-                    for (int i = 0; i < (int)numericUpDown1.Value; i++)
-                    {
-                        mime.From.Add(new MailboxAddress(TxtName.Text, TxtUser.Text));
-                        mime.Subject = TxtSbj.Text;
-                        builder.TextBody = RichTextBox1.Text;
+
+                MimeMessage mime = new MimeMessage();
+                BodyBuilder builder = new BodyBuilder();
+
+
+                for (int i = 0; i < (int)numericUpDown1.Value; i++)
+                {
+                    mime.From.Add(new MailboxAddress(TxtName.Text, TxtUser.Text));
+                    mime.Subject = TxtSbj.Text;
+                    builder.TextBody = RichTextBox1.Text;
 
                     if (fl.FileName != string.Empty)
                     {
@@ -95,24 +97,36 @@ namespace SmokyMailerPro
                     }
                     mime.Body = builder.ToMessageBody();
 
-                    foreach (string str in LstMail.Items)
+                    if (LstMail.Items.Count > 0)
+                    {
+                        foreach (string str in LstMail.Items)
                         {
-                           
-                           mime.To.Add(MailboxAddress.Parse(str));
+
+                            mime.To.Add(MailboxAddress.Parse(str));
 
                         }
 
                         client.Send(mime);
                         Thread.Sleep(1000);
+
+                        count++;
+                        int a = LstMail.Items.Count;
+
+                        int b = a * count;
+
+                        LblCount.Text = b.ToString();
                     }
+                        
+                    else
+                    {
+                        mime.To.Add(MailboxAddress.Parse(TxtTo.Text));
+                        client.Send(mime);
+                        Thread.Sleep(1000);
+                        LblCount.Text = "1";
+                    }
+                    
+                }
                 client.Disconnect(true);
-
-                count++;
-                int a = LstMail.Items.Count;
-
-                int b = a * count;
-
-                LblCount.Text = b.ToString();
 
             }
             catch (Exception exxi)
@@ -126,9 +140,9 @@ namespace SmokyMailerPro
             foreach (FontFamily ff in FontFamily.Families)
             {
                 CmbStyle.Items.Add(ff.Name.ToString());
-                
+
             }
-            
+
         }
 
         private void CmbStyle_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,13 +153,13 @@ namespace SmokyMailerPro
         private void CmbSize_SelectedIndexChanged(object sender, EventArgs e)
         {
             RichTextBox1.Font = new Font(RichTextBox1.Font.FontFamily, float.Parse(CmbSize.SelectedItem.ToString()));
-            
+
         }
 
         private void BtnBold_Click(object sender, EventArgs e)
         {
             FontStyle noBold;
- 
+
             if (RichTextBox1.SelectionFont.Bold == true)
                 noBold = FontStyle.Regular;
             else
@@ -191,10 +205,10 @@ namespace SmokyMailerPro
         }
         private void BtnStop_Click(object sender, EventArgs e)
         {
-                client.Dispose();
-                BtnSend.Enabled = true;
-                pictureBox1.Enabled = false;
-            
+            client.Dispose();
+            BtnSend.Enabled = true;
+            pictureBox1.Enabled = false;
+
         }
 
         private void BtnReset_Click(object sender, EventArgs e)
@@ -209,13 +223,13 @@ namespace SmokyMailerPro
         }
 
         readonly OpenFileDialog fl = new OpenFileDialog();
-        
+
         private void BtnAttach_Click(object sender, EventArgs e)
         {
-             fl.Multiselect = false;
-             fl.Filter = "All Files (*.*)|*.*";
+            fl.Multiselect = false;
+            fl.Filter = "All Files (*.*)|*.*";
 
-            
+
             DialogResult dl = fl.ShowDialog();
 
             if (dl == DialogResult.OK)
@@ -224,7 +238,7 @@ namespace SmokyMailerPro
                 TxtFile.Text = fl.FileName;
                 sr.Close();
             }
-            
+
         }
 
         private void BtnSmtp_Click(object sender, EventArgs e)
@@ -251,7 +265,7 @@ namespace SmokyMailerPro
 
             if (dr == DialogResult.OK)
                 RichTextBox1.SelectionColor = color.Color;
-                
+
         }
     }
 }

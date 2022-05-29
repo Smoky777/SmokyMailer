@@ -72,6 +72,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.BtnClr = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TxtTo = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.TabMail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -96,6 +98,8 @@
             // TabMail
             // 
             this.TabMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TabMail.Controls.Add(this.TxtTo);
+            this.TabMail.Controls.Add(this.label1);
             this.TabMail.Controls.Add(this.BtnReset);
             this.TabMail.Controls.Add(this.LblCount);
             this.TabMail.Controls.Add(this.label2);
@@ -161,10 +165,10 @@
             // 
             // BtnClear
             // 
-            this.BtnClear.Location = new System.Drawing.Point(560, 6);
+            this.BtnClear.Location = new System.Drawing.Point(640, 7);
             this.BtnClear.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(88, 23);
+            this.BtnClear.Size = new System.Drawing.Size(59, 23);
             this.BtnClear.TabIndex = 5;
             this.BtnClear.Text = "CLEAR";
             this.BtnClear.UseVisualStyleBackColor = true;
@@ -172,10 +176,10 @@
             // 
             // BtnStop
             // 
-            this.BtnStop.Location = new System.Drawing.Point(420, 6);
+            this.BtnStop.Location = new System.Drawing.Point(578, 7);
             this.BtnStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnStop.Name = "BtnStop";
-            this.BtnStop.Size = new System.Drawing.Size(88, 23);
+            this.BtnStop.Size = new System.Drawing.Size(54, 23);
             this.BtnStop.TabIndex = 4;
             this.BtnStop.Text = "STOP";
             this.BtnStop.UseVisualStyleBackColor = true;
@@ -183,10 +187,10 @@
             // 
             // BtnSend
             // 
-            this.BtnSend.Location = new System.Drawing.Point(290, 7);
+            this.BtnSend.Location = new System.Drawing.Point(509, 7);
             this.BtnSend.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnSend.Name = "BtnSend";
-            this.BtnSend.Size = new System.Drawing.Size(88, 23);
+            this.BtnSend.Size = new System.Drawing.Size(61, 23);
             this.BtnSend.TabIndex = 3;
             this.BtnSend.Text = "SEND";
             this.BtnSend.UseVisualStyleBackColor = true;
@@ -194,10 +198,10 @@
             // 
             // BtnFile
             // 
-            this.BtnFile.Location = new System.Drawing.Point(104, 6);
+            this.BtnFile.Location = new System.Drawing.Point(80, 7);
             this.BtnFile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnFile.Name = "BtnFile";
-            this.BtnFile.Size = new System.Drawing.Size(88, 23);
+            this.BtnFile.Size = new System.Drawing.Size(76, 23);
             this.BtnFile.TabIndex = 2;
             this.BtnFile.Text = "FILE";
             this.BtnFile.UseVisualStyleBackColor = true;
@@ -577,6 +581,22 @@
             this.BtnClr.UseVisualStyleBackColor = true;
             this.BtnClr.Click += new System.EventHandler(this.BtnClr_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(163, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 17);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Mail To";
+            // 
+            // TxtTo
+            // 
+            this.TxtTo.Location = new System.Drawing.Point(225, 7);
+            this.TxtTo.Name = "TxtTo";
+            this.TxtTo.Size = new System.Drawing.Size(277, 25);
+            this.TxtTo.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -647,6 +667,8 @@
         private System.Windows.Forms.TextBox TxtFile;
         private System.Windows.Forms.Button BtnSmtp;
         private System.Windows.Forms.Button BtnClr;
+        private System.Windows.Forms.TextBox TxtTo;
+        private System.Windows.Forms.Label label1;
     }
 }
 
