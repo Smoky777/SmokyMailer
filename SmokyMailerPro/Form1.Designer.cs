@@ -521,9 +521,24 @@
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(133, 325);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(140, 22);
             this.numericUpDown1.TabIndex = 11;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // CheckSsl
             // 

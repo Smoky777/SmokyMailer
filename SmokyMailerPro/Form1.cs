@@ -91,7 +91,7 @@ namespace SmokyMailerPro
                 client.Authenticate(TxtUser.Text, TxtPass.Text);
 
                 BodyBuilder builder = new BodyBuilder();
-
+                
                 for (int i = 0; i < (int)numericUpDown1.Value; i++)
                 {
                     mime.From.Add(new MailboxAddress(TxtName.Text, TxtUser.Text));
@@ -262,7 +262,7 @@ namespace SmokyMailerPro
             TxtName.Clear();
             TxtPass.Clear();
             TxtPort.Clear();
-            numericUpDown1.Value = 0;
+            numericUpDown1.Value = 1;
         }
 
         private void CheckSsl_CheckedChanged(object sender, EventArgs e)
