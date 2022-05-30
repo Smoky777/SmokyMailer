@@ -73,7 +73,6 @@ namespace SmokyMailerPro
         {
             BtnSend.Enabled = true;
             pictureBox1.Enabled = false;
-            MessageBox.Show("WORK DONE!!!", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -126,6 +125,7 @@ namespace SmokyMailerPro
                         int a = LstMail.Items.Count;
                         int b = a * count;
                         LblCount.Text = b.ToString();
+                        MessageBox.Show("WORK DONE!!!", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                         
@@ -135,6 +135,7 @@ namespace SmokyMailerPro
                         client.Send(mime);
                         Thread.Sleep(1000);
                         LblCount.Text = count.ToString();
+                        MessageBox.Show("WORK DONE!!!", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     
                 }

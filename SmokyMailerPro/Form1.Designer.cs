@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabMail = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
             this.TxtTo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnReset = new System.Windows.Forms.Button();
@@ -75,7 +76,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.TabMail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -90,11 +90,11 @@
             this.tabControl1.Controls.Add(this.TabMail);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(-2, 0);
+            this.tabControl1.Location = new System.Drawing.Point(-1, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(779, 469);
+            this.tabControl1.Size = new System.Drawing.Size(778, 469);
             this.tabControl1.TabIndex = 0;
             // 
             // TabMail
@@ -118,9 +118,20 @@
             this.TabMail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TabMail.Name = "TabMail";
             this.TabMail.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TabMail.Size = new System.Drawing.Size(771, 440);
+            this.TabMail.Size = new System.Drawing.Size(770, 440);
             this.TabMail.TabIndex = 0;
             this.TabMail.Text = "MAIL";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label13.Location = new System.Drawing.Point(401, 53);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(247, 20);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "The Best Tools for eMarketer!";
             // 
             // TxtTo
             // 
@@ -145,7 +156,7 @@
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(96, 26);
             this.BtnReset.TabIndex = 9;
-            this.BtnReset.Text = "Reset Total";
+            this.BtnReset.Text = "Reset Send";
             this.BtnReset.UseVisualStyleBackColor = true;
             this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
@@ -175,7 +186,7 @@
             // 
             this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = global::SmokyMailerPro.Properties.Resources.giphy;
-            this.pictureBox1.Location = new System.Drawing.Point(380, 105);
+            this.pictureBox1.Location = new System.Drawing.Point(409, 104);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(234, 226);
@@ -275,7 +286,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(771, 440);
+            this.tabPage2.Size = new System.Drawing.Size(770, 440);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BODY";
             // 
@@ -481,7 +492,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage3.Size = new System.Drawing.Size(771, 440);
+            this.tabPage3.Size = new System.Drawing.Size(770, 440);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "SETTINGS";
             // 
@@ -620,16 +631,6 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker1_DoWork);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(377, 52);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(242, 20);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "The Best Tools for Spammer!";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -637,6 +638,7 @@
             this.ClientSize = new System.Drawing.Size(775, 467);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Form1";
