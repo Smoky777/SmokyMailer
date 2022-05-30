@@ -30,7 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabMail = new System.Windows.Forms.TabPage();
-            this.LblDone = new System.Windows.Forms.Label();
             this.TxtTo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnReset = new System.Windows.Forms.Button();
@@ -44,6 +43,7 @@
             this.LblFile = new System.Windows.Forms.Label();
             this.LstMail = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.BtnClf = new System.Windows.Forms.Button();
             this.BtnClr = new System.Windows.Forms.Button();
             this.TxtFile = new System.Windows.Forms.TextBox();
             this.BtnAttach = new System.Windows.Forms.Button();
@@ -75,7 +75,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.BtnClf = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.TabMail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -100,7 +100,7 @@
             // TabMail
             // 
             this.TabMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TabMail.Controls.Add(this.LblDone);
+            this.TabMail.Controls.Add(this.label13);
             this.TabMail.Controls.Add(this.TxtTo);
             this.TabMail.Controls.Add(this.label1);
             this.TabMail.Controls.Add(this.BtnReset);
@@ -122,17 +122,6 @@
             this.TabMail.TabIndex = 0;
             this.TabMail.Text = "MAIL";
             // 
-            // LblDone
-            // 
-            this.LblDone.AutoSize = true;
-            this.LblDone.Font = new System.Drawing.Font("Microsoft New Tai Lue", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDone.Location = new System.Drawing.Point(363, 329);
-            this.LblDone.Name = "LblDone";
-            this.LblDone.Size = new System.Drawing.Size(246, 43);
-            this.LblDone.TabIndex = 12;
-            this.LblDone.Text = "WORK DONE!!!";
-            this.LblDone.Visible = false;
-            // 
             // TxtTo
             // 
             this.TxtTo.Location = new System.Drawing.Point(225, 7);
@@ -152,7 +141,7 @@
             // BtnReset
             // 
             this.BtnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReset.Location = new System.Drawing.Point(440, 394);
+            this.BtnReset.Location = new System.Drawing.Point(447, 408);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(96, 26);
             this.BtnReset.TabIndex = 9;
@@ -164,7 +153,7 @@
             // 
             this.LblCount.AutoSize = true;
             this.LblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCount.Location = new System.Drawing.Point(405, 396);
+            this.LblCount.Location = new System.Drawing.Point(405, 413);
             this.LblCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblCount.Name = "LblCount";
             this.LblCount.Size = new System.Drawing.Size(19, 20);
@@ -175,7 +164,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(300, 396);
+            this.label2.Location = new System.Drawing.Point(300, 413);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 20);
@@ -189,8 +178,8 @@
             this.pictureBox1.Location = new System.Drawing.Point(380, 105);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(211, 202);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.Size = new System.Drawing.Size(234, 226);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -289,6 +278,17 @@
             this.tabPage2.Size = new System.Drawing.Size(771, 440);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BODY";
+            // 
+            // BtnClf
+            // 
+            this.BtnClf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnClf.Location = new System.Drawing.Point(706, 9);
+            this.BtnClf.Name = "BtnClf";
+            this.BtnClf.Size = new System.Drawing.Size(52, 23);
+            this.BtnClf.TabIndex = 16;
+            this.BtnClf.Text = "Clear";
+            this.BtnClf.UseVisualStyleBackColor = true;
+            this.BtnClf.Click += new System.EventHandler(this.BtnClf_Click);
             // 
             // BtnClr
             // 
@@ -517,7 +517,7 @@
             // CheckSsl
             // 
             this.CheckSsl.AutoSize = true;
-            this.CheckSsl.Location = new System.Drawing.Point(579, 254);
+            this.CheckSsl.Location = new System.Drawing.Point(578, 252);
             this.CheckSsl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CheckSsl.Name = "CheckSsl";
             this.CheckSsl.Size = new System.Drawing.Size(54, 20);
@@ -620,16 +620,15 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker1_DoWork);
             // 
-            // BtnClf
+            // label13
             // 
-            this.BtnClf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnClf.Location = new System.Drawing.Point(706, 9);
-            this.BtnClf.Name = "BtnClf";
-            this.BtnClf.Size = new System.Drawing.Size(52, 23);
-            this.BtnClf.TabIndex = 16;
-            this.BtnClf.Text = "Clear";
-            this.BtnClf.UseVisualStyleBackColor = true;
-            this.BtnClf.Click += new System.EventHandler(this.BtnClf_Click);
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(377, 52);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(242, 20);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "The Best Tools for Spammer!";
             // 
             // Form1
             // 
@@ -704,8 +703,8 @@
         private System.Windows.Forms.Button BtnClr;
         private System.Windows.Forms.TextBox TxtTo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label LblDone;
         private System.Windows.Forms.Button BtnClf;
+        private System.Windows.Forms.Label label13;
     }
 }
 
