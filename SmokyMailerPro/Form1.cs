@@ -20,6 +20,7 @@ namespace SmokyMailerPro
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace SmokyMailerPro
         readonly SmtpClient client = new SmtpClient();
         readonly MimeMessage mime = new MimeMessage();
         int count;
+       
 
         private void BtnFile_Click(object sender, EventArgs e)
         {
@@ -63,12 +65,12 @@ namespace SmokyMailerPro
 
         private void BtnSend_Click(object sender, EventArgs e)
         {
+            
             BtnSend.Enabled = false;
             pictureBox1.Enabled = true;
             backgroundWorker1.RunWorkerAsync();
            
         }
-
         private void BackgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             BtnSend.Enabled = true;
@@ -79,7 +81,7 @@ namespace SmokyMailerPro
         {
             CheckForIllegalCrossThreadCalls = false;
 
-
+            var html = RtfPipe.Rtf.ToHtml(RichTextBox1.Rtf);
             try
             {
                 SmtpClient client = new SmtpClient
@@ -96,7 +98,7 @@ namespace SmokyMailerPro
                 {
                     mime.From.Add(new MailboxAddress(TxtName.Text, TxtUser.Text));
                     mime.Subject = TxtSbj.Text;
-                    builder.HtmlBody = RichTextBox1.Text;
+                    builder.HtmlBody = RtfPipe.Rtf.ToHtml(RichTextBox1.Rtf);
 
                     if (TxtFile.Text != string.Empty)
                     {
@@ -126,6 +128,7 @@ namespace SmokyMailerPro
                         int b = a * count;
                         LblCount.Text = b.ToString();
                         MessageBox.Show("WORK DONE!!!", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        pictureBox1.Enabled = false;
 
                     }
                         
@@ -136,6 +139,7 @@ namespace SmokyMailerPro
                         Thread.Sleep(1000);
                         LblCount.Text = count.ToString();
                         MessageBox.Show("WORK DONE!!!", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        pictureBox1.Enabled = false;
                     }
                     
                 }
@@ -155,6 +159,7 @@ namespace SmokyMailerPro
                 CmbStyle.Items.Add(ff.Name.ToString());
 
             }
+            
         }
         private void CmbStyle_SelectedIndexChanged(object sender, EventArgs e)
         {

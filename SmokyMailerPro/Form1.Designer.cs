@@ -125,11 +125,11 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label13.Location = new System.Drawing.Point(401, 53);
+            this.label13.Location = new System.Drawing.Point(359, 54);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(247, 20);
+            this.label13.Size = new System.Drawing.Size(326, 25);
             this.label13.TabIndex = 12;
             this.label13.Text = "The Best Tools for eMarketer!";
             // 
@@ -152,7 +152,7 @@
             // BtnReset
             // 
             this.BtnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReset.Location = new System.Drawing.Point(447, 408);
+            this.BtnReset.Location = new System.Drawing.Point(446, 408);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(96, 26);
             this.BtnReset.TabIndex = 9;
