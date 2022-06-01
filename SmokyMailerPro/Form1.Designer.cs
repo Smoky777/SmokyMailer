@@ -299,7 +299,6 @@
             this.CheckHtml.TabIndex = 17;
             this.CheckHtml.Text = "Html";
             this.CheckHtml.UseVisualStyleBackColor = true;
-            this.CheckHtml.CheckedChanged += new System.EventHandler(this.CheckHtml_CheckedChanged);
             // 
             // BtnClf
             // 
