@@ -20,7 +20,7 @@ namespace SmokyMailerPro
 {
     public partial class Form1 : Form
     {
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace SmokyMailerPro
         readonly SmtpClient client = new SmtpClient();
         readonly MimeMessage mime = new MimeMessage();
         int count;
-       
+
 
         private void BtnFile_Click(object sender, EventArgs e)
         {
@@ -56,20 +56,20 @@ namespace SmokyMailerPro
                     sr.Close();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
 
         private void BtnSend_Click(object sender, EventArgs e)
         {
-            
+
             BtnSend.Enabled = false;
             pictureBox1.Enabled = true;
             backgroundWorker1.RunWorkerAsync();
-           
+
         }
         private void BackgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -81,7 +81,7 @@ namespace SmokyMailerPro
         {
             CheckForIllegalCrossThreadCalls = false;
 
-            
+            if(LstMail.Text != null || TxtTo.Text != null)
             try
             {
                 RtfPipe.Rtf.ToHtml(RichTextBox1.Rtf);
@@ -94,14 +94,14 @@ namespace SmokyMailerPro
                 client.Authenticate(TxtUser.Text, TxtPass.Text);
 
                 BodyBuilder builder = new BodyBuilder();
-                
+
                 for (int i = 0; i < (int)numericUpDown1.Value; i++)
                 {
                     mime.From.Add(new MailboxAddress(TxtName.Text, TxtUser.Text));
                     mime.Subject = TxtSbj.Text;
                     builder.HtmlBody = RtfPipe.Rtf.ToHtml(RichTextBox1.Rtf);
 
-                    if(CheckHtml.Checked == true)
+                    if (CheckHtml.Checked == true)
                     {
                         builder.HtmlBody = RichTextBox1.Text;
                     }
@@ -115,7 +115,7 @@ namespace SmokyMailerPro
                     {
                         mime.Body = builder.ToMessageBody();
                     }
-                    
+
 
                     if (LstMail.Items.Count > 0)
                     {
@@ -137,9 +137,10 @@ namespace SmokyMailerPro
                         pictureBox1.Enabled = false;
 
                     }
-                        
+
                     else
                     {
+                        count++;
                         mime.To.Add(MailboxAddress.Parse(TxtTo.Text));
                         client.Send(mime);
                         Thread.Sleep(1000);
@@ -147,17 +148,16 @@ namespace SmokyMailerPro
                         MessageBox.Show("WORK DONE!!!", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         pictureBox1.Enabled = false;
                     }
-                    
+
                 }
                 client.Disconnect(true);
                 BtnSend.Enabled = true;
-
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
+        }   
 
         private void RichTextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -166,12 +166,11 @@ namespace SmokyMailerPro
                 CmbStyle.Items.Add(ff.Name.ToString());
 
             }
-            
         }
         private void CmbStyle_SelectedIndexChanged(object sender, EventArgs e)
         {
             RichTextBox1.Font = new Font(CmbStyle.Text, RichTextBox1.Font.Size);
-            
+
         }
         private void CmbSize_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -230,14 +229,12 @@ namespace SmokyMailerPro
             client.Dispose();
             BtnSend.Enabled = true;
             pictureBox1.Enabled = false;
-
         }
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
             LblCount.Text = "0";
             count = 0;
-
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
@@ -264,7 +261,6 @@ namespace SmokyMailerPro
                 TxtFile.Text = fl.FileName;
                 sr.Close();
             }
-
         }
 
         private void BtnSmtp_Click(object sender, EventArgs e)
@@ -291,12 +287,14 @@ namespace SmokyMailerPro
 
             if (dr == DialogResult.OK)
                 RichTextBox1.SelectionColor = color.Color;
-
         }
 
         private void BtnClf_Click(object sender, EventArgs e)
         {
             TxtFile.Clear();
-        } 
+        }
+
     }
 }
+
+
