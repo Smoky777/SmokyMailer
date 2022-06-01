@@ -297,15 +297,6 @@ namespace SmokyMailerPro
         private void BtnClf_Click(object sender, EventArgs e)
         {
             TxtFile.Clear();
-        }
-
-        private void CheckHtml_CheckedChanged(object sender, EventArgs e)
-        {
-           
-            if (CheckHtml.Checked == true)
-            {
-                
-            }
-        }
+        } 
     }
 }
