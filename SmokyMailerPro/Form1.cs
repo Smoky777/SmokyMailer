@@ -81,9 +81,10 @@ namespace SmokyMailerPro
         {
             CheckForIllegalCrossThreadCalls = false;
 
-            var html = RtfPipe.Rtf.ToHtml(RichTextBox1.Rtf);
+            
             try
             {
+                RtfPipe.Rtf.ToHtml(RichTextBox1.Rtf);
                 SmtpClient client = new SmtpClient
                 {
                     Timeout = 3000
@@ -99,6 +100,11 @@ namespace SmokyMailerPro
                     mime.From.Add(new MailboxAddress(TxtName.Text, TxtUser.Text));
                     mime.Subject = TxtSbj.Text;
                     builder.HtmlBody = RtfPipe.Rtf.ToHtml(RichTextBox1.Rtf);
+
+                    if(CheckHtml.Checked == true)
+                    {
+                        builder.HtmlBody = RichTextBox1.Text;
+                    }
 
                     if (TxtFile.Text != string.Empty)
                     {
@@ -144,6 +150,7 @@ namespace SmokyMailerPro
                     
                 }
                 client.Disconnect(true);
+                BtnSend.Enabled = true;
 
             }
             catch (Exception ex)
@@ -292,5 +299,13 @@ namespace SmokyMailerPro
             TxtFile.Clear();
         }
 
+        private void CheckHtml_CheckedChanged(object sender, EventArgs e)
+        {
+           
+            if (CheckHtml.Checked == true)
+            {
+                
+            }
+        }
     }
 }

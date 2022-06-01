@@ -44,6 +44,7 @@
             this.LblFile = new System.Windows.Forms.Label();
             this.LstMail = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.CheckHtml = new System.Windows.Forms.CheckBox();
             this.BtnClf = new System.Windows.Forms.Button();
             this.BtnClr = new System.Windows.Forms.Button();
             this.TxtFile = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@
             this.CmbSize = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.CmbStyle = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.TxtSbj = new System.Windows.Forms.TextBox();
             this.RichTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -265,6 +265,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabPage2.Controls.Add(this.CheckHtml);
             this.tabPage2.Controls.Add(this.BtnClf);
             this.tabPage2.Controls.Add(this.BtnClr);
             this.tabPage2.Controls.Add(this.TxtFile);
@@ -277,7 +278,6 @@
             this.tabPage2.Controls.Add(this.CmbSize);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.CmbStyle);
-            this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.TxtSbj);
             this.tabPage2.Controls.Add(this.RichTextBox1);
@@ -289,6 +289,17 @@
             this.tabPage2.Size = new System.Drawing.Size(770, 440);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BODY";
+            // 
+            // CheckHtml
+            // 
+            this.CheckHtml.AutoSize = true;
+            this.CheckHtml.Location = new System.Drawing.Point(12, 47);
+            this.CheckHtml.Name = "CheckHtml";
+            this.CheckHtml.Size = new System.Drawing.Size(57, 20);
+            this.CheckHtml.TabIndex = 17;
+            this.CheckHtml.Text = "Html";
+            this.CheckHtml.UseVisualStyleBackColor = true;
+            this.CheckHtml.CheckedChanged += new System.EventHandler(this.CheckHtml_CheckedChanged);
             // 
             // BtnClf
             // 
@@ -428,16 +439,6 @@
             this.CmbStyle.Size = new System.Drawing.Size(148, 24);
             this.CmbStyle.TabIndex = 5;
             this.CmbStyle.SelectedIndexChanged += new System.EventHandler(this.CmbStyle_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 47);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 16);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Plain/Html";
             // 
             // label4
             // 
@@ -704,7 +705,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox CmbStyle;
         private System.Windows.Forms.Label label12;
@@ -722,6 +722,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnClf;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox CheckHtml;
     }
 }
 
