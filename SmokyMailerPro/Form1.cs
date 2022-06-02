@@ -143,6 +143,7 @@ namespace SmokyMailerPro
                         mime.To.Add(MailboxAddress.Parse(TxtTo.Text));
                         client.Send(mime);
                         Thread.Sleep(1000);
+                        count++;
                         LblCount.Text = count.ToString();
                         MessageBox.Show("WORK DONE!!!", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         pictureBox1.Enabled = false;
