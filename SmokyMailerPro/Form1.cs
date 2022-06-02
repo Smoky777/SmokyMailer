@@ -81,7 +81,7 @@ namespace SmokyMailerPro
         {
             CheckForIllegalCrossThreadCalls = false;
 
-            if(LstMail.Text != null || TxtTo.Text != null)
+
             try
             {
                 RtfPipe.Rtf.ToHtml(RichTextBox1.Rtf);
@@ -89,6 +89,7 @@ namespace SmokyMailerPro
                 {
                     Timeout = 3000
                 };
+
                 client.AuthenticationMechanisms.Remove("XOAUTH2");
                 client.Connect(TxtHost.Text, int.Parse(TxtPort.Text));
                 client.Authenticate(TxtUser.Text, TxtPass.Text);
@@ -123,7 +124,6 @@ namespace SmokyMailerPro
                         {
 
                             mime.To.Add(MailboxAddress.Parse(str));
-
                         }
 
                         client.Send(mime);
@@ -135,36 +135,34 @@ namespace SmokyMailerPro
                         LblCount.Text = b.ToString();
                         MessageBox.Show("WORK DONE!!!", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         pictureBox1.Enabled = false;
-
+                        BtnSend.Enabled = true;
                     }
 
                     else
                     {
-                        count++;
                         mime.To.Add(MailboxAddress.Parse(TxtTo.Text));
                         client.Send(mime);
                         Thread.Sleep(1000);
                         LblCount.Text = count.ToString();
                         MessageBox.Show("WORK DONE!!!", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         pictureBox1.Enabled = false;
+                        BtnSend.Enabled = true;
                     }
 
                 }
                 client.Disconnect(true);
-                BtnSend.Enabled = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }   
+        }
 
         private void RichTextBox1_TextChanged(object sender, EventArgs e)
         {
             foreach (FontFamily ff in FontFamily.Families)
             {
                 CmbStyle.Items.Add(ff.Name.ToString());
-
             }
         }
         private void CmbStyle_SelectedIndexChanged(object sender, EventArgs e)
@@ -229,20 +227,21 @@ namespace SmokyMailerPro
             client.Dispose();
             BtnSend.Enabled = true;
             pictureBox1.Enabled = false;
+
         }
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
-            LblCount.Text = "0";
             count = 0;
+            LblCount.Text = count.ToString();
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
             LstMail.Items.Clear();
             TxtTo.Clear();
-            LblCount.Text = "0";
             count = 0;
+            LblCount.Text = count.ToString();
         }
 
         readonly OpenFileDialog fl = new OpenFileDialog();
@@ -261,6 +260,7 @@ namespace SmokyMailerPro
                 TxtFile.Text = fl.FileName;
                 sr.Close();
             }
+
         }
 
         private void BtnSmtp_Click(object sender, EventArgs e)
@@ -277,7 +277,7 @@ namespace SmokyMailerPro
         {
             SmtpClient client1 = new SmtpClient();
             if (CheckSsl.Checked)
-                client1.SslProtocols = System.Security.Authentication.SslProtocols.Default;
+            client1.SslProtocols = System.Security.Authentication.SslProtocols.Default;
         }
 
         private void BtnClr_Click(object sender, EventArgs e)
@@ -286,7 +286,8 @@ namespace SmokyMailerPro
             DialogResult dr = color.ShowDialog();
 
             if (dr == DialogResult.OK)
-                RichTextBox1.SelectionColor = color.Color;
+            RichTextBox1.SelectionColor = color.Color;
+
         }
 
         private void BtnClf_Click(object sender, EventArgs e)
@@ -294,7 +295,23 @@ namespace SmokyMailerPro
             TxtFile.Clear();
         }
 
+
+        private void BtnLeft_Click(object sender, EventArgs e)
+        {
+            RichTextBox1.SelectionAlignment = HorizontalAlignment.Left;
+        }
+
+        private void BtnCenter_Click(object sender, EventArgs e)
+        {
+            RichTextBox1.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        private void BtnRight_Click(object sender, EventArgs e)
+        {
+            RichTextBox1.SelectionAlignment = HorizontalAlignment.Right;
+        }
     }
 }
+
 
 

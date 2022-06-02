@@ -76,6 +76,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.BtnLeft = new System.Windows.Forms.Button();
+            this.BtnCenter = new System.Windows.Forms.Button();
+            this.BtnRight = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.TabMail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,7 +99,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(778, 469);
+            this.tabControl1.Size = new System.Drawing.Size(778, 489);
             this.tabControl1.TabIndex = 0;
             // 
             // TabMail
@@ -118,18 +123,18 @@
             this.TabMail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TabMail.Name = "TabMail";
             this.TabMail.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TabMail.Size = new System.Drawing.Size(770, 440);
+            this.TabMail.Size = new System.Drawing.Size(770, 468);
             this.TabMail.TabIndex = 0;
             this.TabMail.Text = "MAIL";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label13.Location = new System.Drawing.Point(359, 54);
+            this.label13.Location = new System.Drawing.Point(318, 62);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(326, 25);
+            this.label13.Size = new System.Drawing.Size(402, 31);
             this.label13.TabIndex = 12;
             this.label13.Text = "The Best Tools for eMarketer!";
             // 
@@ -152,7 +157,7 @@
             // BtnReset
             // 
             this.BtnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReset.Location = new System.Drawing.Point(446, 408);
+            this.BtnReset.Location = new System.Drawing.Point(442, 430);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(96, 26);
             this.BtnReset.TabIndex = 9;
@@ -164,7 +169,7 @@
             // 
             this.LblCount.AutoSize = true;
             this.LblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCount.Location = new System.Drawing.Point(405, 413);
+            this.LblCount.Location = new System.Drawing.Point(405, 433);
             this.LblCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblCount.Name = "LblCount";
             this.LblCount.Size = new System.Drawing.Size(19, 20);
@@ -175,7 +180,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(300, 413);
+            this.label2.Location = new System.Drawing.Point(300, 433);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 20);
@@ -186,7 +191,7 @@
             // 
             this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = global::SmokyMailerPro.Properties.Resources.giphy;
-            this.pictureBox1.Location = new System.Drawing.Point(409, 104);
+            this.pictureBox1.Location = new System.Drawing.Point(409, 124);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(234, 226);
@@ -259,12 +264,17 @@
             this.LstMail.Location = new System.Drawing.Point(-4, 33);
             this.LstMail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.LstMail.Name = "LstMail";
-            this.LstMail.Size = new System.Drawing.Size(296, 412);
+            this.LstMail.Size = new System.Drawing.Size(296, 429);
             this.LstMail.TabIndex = 0;
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.checkBox1);
+            this.tabPage2.Controls.Add(this.BtnRight);
+            this.tabPage2.Controls.Add(this.BtnCenter);
+            this.tabPage2.Controls.Add(this.BtnLeft);
             this.tabPage2.Controls.Add(this.CheckHtml);
             this.tabPage2.Controls.Add(this.BtnClf);
             this.tabPage2.Controls.Add(this.BtnClr);
@@ -286,7 +296,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(770, 440);
+            this.tabPage2.Size = new System.Drawing.Size(770, 460);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BODY";
             // 
@@ -344,7 +354,7 @@
             // BtnUnder
             // 
             this.BtnUnder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUnder.Location = new System.Drawing.Point(503, 42);
+            this.BtnUnder.Location = new System.Drawing.Point(494, 43);
             this.BtnUnder.Name = "BtnUnder";
             this.BtnUnder.Size = new System.Drawing.Size(24, 23);
             this.BtnUnder.TabIndex = 12;
@@ -355,7 +365,7 @@
             // BtnItalic
             // 
             this.BtnItalic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnItalic.Location = new System.Drawing.Point(443, 42);
+            this.BtnItalic.Location = new System.Drawing.Point(434, 43);
             this.BtnItalic.Name = "BtnItalic";
             this.BtnItalic.Size = new System.Drawing.Size(24, 23);
             this.BtnItalic.TabIndex = 11;
@@ -366,7 +376,7 @@
             // BtnStrike
             // 
             this.BtnStrike.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnStrike.Location = new System.Drawing.Point(473, 42);
+            this.BtnStrike.Location = new System.Drawing.Point(464, 43);
             this.BtnStrike.Name = "BtnStrike";
             this.BtnStrike.Size = new System.Drawing.Size(24, 23);
             this.BtnStrike.TabIndex = 10;
@@ -376,7 +386,7 @@
             // 
             // BtnBold
             // 
-            this.BtnBold.Location = new System.Drawing.Point(413, 42);
+            this.BtnBold.Location = new System.Drawing.Point(404, 43);
             this.BtnBold.Name = "BtnBold";
             this.BtnBold.Size = new System.Drawing.Size(24, 23);
             this.BtnBold.TabIndex = 9;
@@ -387,7 +397,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(291, 47);
+            this.label12.Location = new System.Drawing.Point(280, 48);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(41, 16);
             this.label12.TabIndex = 8;
@@ -414,7 +424,7 @@
             "36",
             "48",
             "72"});
-            this.CmbSize.Location = new System.Drawing.Point(334, 42);
+            this.CmbSize.Location = new System.Drawing.Point(325, 44);
             this.CmbSize.Name = "CmbSize";
             this.CmbSize.Size = new System.Drawing.Size(73, 24);
             this.CmbSize.TabIndex = 7;
@@ -423,7 +433,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(89, 47);
+            this.label11.Location = new System.Drawing.Point(74, 48);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(46, 16);
             this.label11.TabIndex = 6;
@@ -433,7 +443,7 @@
             // 
             this.CmbStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbStyle.FormattingEnabled = true;
-            this.CmbStyle.Location = new System.Drawing.Point(137, 42);
+            this.CmbStyle.Location = new System.Drawing.Point(126, 43);
             this.CmbStyle.Name = "CmbStyle";
             this.CmbStyle.Size = new System.Drawing.Size(148, 24);
             this.CmbStyle.TabIndex = 5;
@@ -461,11 +471,12 @@
             // RichTextBox1
             // 
             this.RichTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RichTextBox1.Location = new System.Drawing.Point(0, 69);
+            this.RichTextBox1.Location = new System.Drawing.Point(0, 73);
             this.RichTextBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RichTextBox1.Name = "RichTextBox1";
+            this.RichTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.RichTextBox1.ShowSelectionMargin = true;
-            this.RichTextBox1.Size = new System.Drawing.Size(769, 374);
+            this.RichTextBox1.Size = new System.Drawing.Size(769, 395);
             this.RichTextBox1.TabIndex = 0;
             this.RichTextBox1.Text = "";
             this.RichTextBox1.TextChanged += new System.EventHandler(this.RichTextBox1_TextChanged);
@@ -492,7 +503,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage3.Size = new System.Drawing.Size(770, 440);
+            this.tabPage3.Size = new System.Drawing.Size(770, 460);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "SETTINGS";
             // 
@@ -543,7 +554,7 @@
             // CheckSsl
             // 
             this.CheckSsl.AutoSize = true;
-            this.CheckSsl.Location = new System.Drawing.Point(578, 252);
+            this.CheckSsl.Location = new System.Drawing.Point(265, 255);
             this.CheckSsl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CheckSsl.Name = "CheckSsl";
             this.CheckSsl.Size = new System.Drawing.Size(54, 20);
@@ -554,10 +565,10 @@
             // 
             // TxtPort
             // 
-            this.TxtPort.Location = new System.Drawing.Point(98, 250);
+            this.TxtPort.Location = new System.Drawing.Point(98, 253);
             this.TxtPort.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtPort.Name = "TxtPort";
-            this.TxtPort.Size = new System.Drawing.Size(438, 22);
+            this.TxtPort.Size = new System.Drawing.Size(144, 22);
             this.TxtPort.TabIndex = 9;
             // 
             // TxtPass
@@ -646,11 +657,63 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker1_DoWork);
             // 
+            // BtnLeft
+            // 
+            this.BtnLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLeft.Location = new System.Drawing.Point(524, 41);
+            this.BtnLeft.Name = "BtnLeft";
+            this.BtnLeft.Size = new System.Drawing.Size(25, 29);
+            this.BtnLeft.TabIndex = 18;
+            this.BtnLeft.Text = "L";
+            this.BtnLeft.UseVisualStyleBackColor = true;
+            this.BtnLeft.Click += new System.EventHandler(this.BtnLeft_Click);
+            // 
+            // BtnCenter
+            // 
+            this.BtnCenter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCenter.Location = new System.Drawing.Point(555, 41);
+            this.BtnCenter.Name = "BtnCenter";
+            this.BtnCenter.Size = new System.Drawing.Size(25, 29);
+            this.BtnCenter.TabIndex = 19;
+            this.BtnCenter.Text = "C";
+            this.BtnCenter.UseVisualStyleBackColor = true;
+            this.BtnCenter.Click += new System.EventHandler(this.BtnCenter_Click);
+            // 
+            // BtnRight
+            // 
+            this.BtnRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRight.Location = new System.Drawing.Point(586, 41);
+            this.BtnRight.Name = "BtnRight";
+            this.BtnRight.Size = new System.Drawing.Size(25, 29);
+            this.BtnRight.TabIndex = 20;
+            this.BtnRight.Text = "R";
+            this.BtnRight.UseVisualStyleBackColor = true;
+            this.BtnRight.Click += new System.EventHandler(this.BtnRight_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(617, 48);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(54, 20);
+            this.checkBox1.TabIndex = 21;
+            this.checkBox1.Text = "ZFE";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(673, 45);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "UrlEncode";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 467);
+            this.ClientSize = new System.Drawing.Size(775, 487);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -722,6 +785,11 @@
         private System.Windows.Forms.Button BtnClf;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox CheckHtml;
+        private System.Windows.Forms.Button BtnRight;
+        private System.Windows.Forms.Button BtnCenter;
+        private System.Windows.Forms.Button BtnLeft;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
