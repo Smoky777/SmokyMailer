@@ -28,9 +28,8 @@ namespace SmokyMailerPro
 
         readonly SmtpClient client = new SmtpClient();
         readonly MimeMessage mime = new MimeMessage();
+        readonly BodyBuilder builder = new BodyBuilder();
         int count;
-
-
         private void BtnFile_Click(object sender, EventArgs e)
         { //Button File and creation of FileDialog, reading the stream and adding to ListTextBox
             try
@@ -92,9 +91,7 @@ namespace SmokyMailerPro
                 client.AuthenticationMechanisms.Remove("XOAUTH2");
                 client.Connect(TxtHost.Text, int.Parse(TxtPort.Text));
                 client.Authenticate(TxtUser.Text, TxtPass.Text);
-
-                BodyBuilder builder = new BodyBuilder();
-
+                
                 for (int i = 0; i < (int)numericUpDown1.Value; i++)
                 {
                     mime.From.Add(new MailboxAddress(TxtName.Text, TxtUser.Text));
@@ -132,11 +129,8 @@ namespace SmokyMailerPro
                         int a = LstMail.Items.Count;
                         int b = a * count;
                         LblCount.Text = b.ToString();
-                        MessageBox.Show("WORK DONE!!!", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        pictureBox1.Enabled = false;
                         BtnSend.Enabled = true;
                     }
-
                     else
                     {
                         mime.To.Add(MailboxAddress.Parse(TxtTo.Text));
@@ -144,12 +138,13 @@ namespace SmokyMailerPro
                         Thread.Sleep(1000);
                         count++;
                         LblCount.Text = count.ToString();
-                        MessageBox.Show("WORK DONE!!!", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         pictureBox1.Enabled = false;
                         BtnSend.Enabled = true;
                     }
 
                 }
+                MessageBox.Show("WORK DONE!!!", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                pictureBox1.Enabled = false;
                 client.Disconnect(true);
             }
             catch (Exception ex)
@@ -168,10 +163,12 @@ namespace SmokyMailerPro
         }
         private void CmbStyle_SelectedIndexChanged(object sender, EventArgs e)
         {//New Font selected
+
             RichTextBox1.Font = new Font(CmbStyle.Text, RichTextBox1.Font.Size);
         }
         private void CmbSize_SelectedIndexChanged(object sender, EventArgs e)
         {//New Size selected
+
             RichTextBox1.Font = new Font(RichTextBox1.Font.FontFamily, float.Parse(CmbSize.SelectedItem.ToString()));
         }
 
@@ -257,8 +254,7 @@ namespace SmokyMailerPro
 
             fl.Multiselect = false;
             fl.Filter = "All Files (*.*)|*.*";
-
-
+            
             DialogResult dl = fl.ShowDialog();
 
             if (dl == DialogResult.OK)
@@ -267,7 +263,6 @@ namespace SmokyMailerPro
                 TxtFile.Text = fl.FileName;
                 sr.Close();
             }
-
         }
 
         private void BtnSmtp_Click(object sender, EventArgs e)
@@ -286,7 +281,7 @@ namespace SmokyMailerPro
 
             SmtpClient client1 = new SmtpClient();
             if (CheckSsl.Checked)
-            client1.SslProtocols = System.Security.Authentication.SslProtocols.Default;
+                client1.SslProtocols = System.Security.Authentication.SslProtocols.Default;
         }
 
         private void BtnClr_Click(object sender, EventArgs e)
@@ -296,7 +291,7 @@ namespace SmokyMailerPro
             DialogResult dr = color.ShowDialog();
 
             if (dr == DialogResult.OK)
-            RichTextBox1.SelectionColor = color.Color;
+                RichTextBox1.SelectionColor = color.Color;
         }
 
         private void BtnClf_Click(object sender, EventArgs e)
@@ -318,19 +313,28 @@ namespace SmokyMailerPro
         {
             RichTextBox1.SelectionAlignment = HorizontalAlignment.Right;
         }
-
+        
         private void CheckEncode_CheckedChanged(object sender, EventArgs e)
-        {//Replace spaces with unicode characters for RichTextBox
+        {//Replace spaces and characters with unicode characters for RichTextBox
 
-            RichTextBox1.Text = RichTextBox1.Text.Replace(" ", "\u0008");
+            if (CheckHtml.Checked == true)
+                RichTextBox1.Text = RichTextBox1.Text.Replace(",","&#1548;");
 
-            if(CheckHtml.Checked)
-            {
-                RichTextBox1.Text = RichTextBox1.Text.Replace(" ", "&#8;");
-            }
+            if (CheckEncode.Checked == false)
+                RichTextBox1.Text = RichTextBox1.Text.Replace("&#1548;", ",");
+            
+
+            if (CheckHtml.Checked == false)
+                RichTextBox1.Text = RichTextBox1.Text.Replace(",", "\u060C");
+                RichTextBox1.Text = RichTextBox1.Text.Replace(" ", "\u00A0");
+
+            if(CheckEncode.Checked == false)
+                RichTextBox1.Text = RichTextBox1.Text.Replace("\u060C", ",");
+                RichTextBox1.Text = RichTextBox1.Text.Replace("\u00A0", " ");
         }
     }
 }
+
 
 
 

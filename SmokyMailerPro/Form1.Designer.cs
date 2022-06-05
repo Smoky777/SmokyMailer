@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabMail = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
@@ -98,7 +99,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(778, 489);
+            this.tabControl1.Size = new System.Drawing.Size(778, 487);
             this.tabControl1.TabIndex = 0;
             // 
             // TabMail
@@ -122,7 +123,7 @@
             this.TabMail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TabMail.Name = "TabMail";
             this.TabMail.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TabMail.Size = new System.Drawing.Size(770, 460);
+            this.TabMail.Size = new System.Drawing.Size(770, 458);
             this.TabMail.TabIndex = 0;
             this.TabMail.Text = "MAIL";
             // 
@@ -294,7 +295,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(770, 460);
+            this.tabPage2.Size = new System.Drawing.Size(770, 458);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BODY";
             // 
@@ -303,9 +304,9 @@
             this.CheckEncode.AutoSize = true;
             this.CheckEncode.Location = new System.Drawing.Point(617, 48);
             this.CheckEncode.Name = "CheckEncode";
-            this.CheckEncode.Size = new System.Drawing.Size(109, 20);
+            this.CheckEncode.Size = new System.Drawing.Size(114, 20);
             this.CheckEncode.TabIndex = 21;
-            this.CheckEncode.Text = "TextEncode";
+            this.CheckEncode.Text = "TextEncoder";
             this.CheckEncode.UseVisualStyleBackColor = true;
             this.CheckEncode.CheckedChanged += new System.EventHandler(this.CheckEncode_CheckedChanged);
             // 
@@ -518,7 +519,7 @@
             this.RichTextBox1.Name = "RichTextBox1";
             this.RichTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.RichTextBox1.ShowSelectionMargin = true;
-            this.RichTextBox1.Size = new System.Drawing.Size(769, 395);
+            this.RichTextBox1.Size = new System.Drawing.Size(769, 389);
             this.RichTextBox1.TabIndex = 0;
             this.RichTextBox1.Text = "";
             this.RichTextBox1.TextChanged += new System.EventHandler(this.RichTextBox1_TextChanged);
@@ -545,7 +546,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage3.Size = new System.Drawing.Size(770, 460);
+            this.tabPage3.Size = new System.Drawing.Size(770, 458);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "SETTINGS";
             // 
@@ -703,10 +704,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 487);
+            this.ClientSize = new System.Drawing.Size(775, 491);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Form1";
