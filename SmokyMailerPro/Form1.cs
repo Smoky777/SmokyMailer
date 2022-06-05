@@ -150,6 +150,7 @@ namespace SmokyMailerPro
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                pictureBox1.Enabled = false;
             }
         }
 

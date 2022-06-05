@@ -30,3 +30,7 @@ C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\obj\Debug\SmokyMailerP
 C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\obj\Debug\SmokyMailerPro.exe
 C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\obj\Debug\SmokyMailerPro.pdb
 C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\bin\Debug\RtfPipe.dll
+C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\bin\Debug\SmokyMailerPro.exe.manifest
+C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\bin\Debug\SmokyMailerPro.application
+C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\obj\Debug\SmokyMailerPro.exe.manifest
+C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\obj\Debug\SmokyMailerPro.application
