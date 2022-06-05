@@ -32,7 +32,7 @@ namespace SmokyMailerPro
 
 
         private void BtnFile_Click(object sender, EventArgs e)
-        {
+        { //Button File and creation of FileDialog, reading the stream and adding to ListTextBox
             try
             {
                 OpenFileDialog ofd = new OpenFileDialog
@@ -64,12 +64,11 @@ namespace SmokyMailerPro
         }
 
         private void BtnSend_Click(object sender, EventArgs e)
-        {
+        {//Implementation of the backgroundWorker for multithread management
 
             BtnSend.Enabled = false;
             pictureBox1.Enabled = true;
             backgroundWorker1.RunWorkerAsync();
-
         }
         private void BackgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -81,7 +80,7 @@ namespace SmokyMailerPro
         {
             CheckForIllegalCrossThreadCalls = false;
 
-
+            //Sending method, creation of SMTP, body, management of the font and message builder
             try
             {
                 RtfPipe.Rtf.ToHtml(RichTextBox1.Rtf);
@@ -160,24 +159,25 @@ namespace SmokyMailerPro
         }
 
         private void RichTextBox1_TextChanged(object sender, EventArgs e)
-        {
+        {//Adding the FontFamily
+
             foreach (FontFamily ff in FontFamily.Families)
             {
                 CmbStyle.Items.Add(ff.Name.ToString());
             }
         }
         private void CmbStyle_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {//New Font selected
             RichTextBox1.Font = new Font(CmbStyle.Text, RichTextBox1.Font.Size);
-
         }
         private void CmbSize_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {//New Size selected
             RichTextBox1.Font = new Font(RichTextBox1.Font.FontFamily, float.Parse(CmbSize.SelectedItem.ToString()));
         }
 
         private void BtnBold_Click(object sender, EventArgs e)
-        {
+        {//Bold
+
             FontStyle noBold;
 
             if (RichTextBox1.SelectionFont.Bold == true)
@@ -189,7 +189,8 @@ namespace SmokyMailerPro
         }
 
         private void BtnStrike_Click(object sender, EventArgs e)
-        {
+        {//Strike
+
             FontStyle noStrike;
 
             if (RichTextBox1.SelectionFont.Strikeout == true)
@@ -201,7 +202,8 @@ namespace SmokyMailerPro
         }
 
         private void BtnItalic_Click(object sender, EventArgs e)
-        {
+        {//Italic
+
             FontStyle noItalic;
 
             if (RichTextBox1.SelectionFont.Italic == true)
@@ -213,7 +215,8 @@ namespace SmokyMailerPro
         }
 
         private void BtnUnder_Click(object sender, EventArgs e)
-        {
+        {//Under
+
             FontStyle noUnder;
 
             if (RichTextBox1.SelectionFont.Underline == true)
@@ -224,21 +227,23 @@ namespace SmokyMailerPro
             RichTextBox1.SelectionFont = new Font(RichTextBox1.Font.FontFamily, RichTextBox1.Font.Size, noUnder);
         }
         private void BtnStop_Click(object sender, EventArgs e)
-        {
+        {//Stop sending
+
             client.Dispose();
             BtnSend.Enabled = true;
             pictureBox1.Enabled = false;
-
         }
 
         private void BtnReset_Click(object sender, EventArgs e)
-        {
+        {//Reset
+
             count = 0;
             LblCount.Text = count.ToString();
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
-        {
+        {//Clear
+
             LstMail.Items.Clear();
             TxtTo.Clear();
             count = 0;
@@ -248,7 +253,8 @@ namespace SmokyMailerPro
         readonly OpenFileDialog fl = new OpenFileDialog();
 
         private void BtnAttach_Click(object sender, EventArgs e)
-        {
+        {//Attachment
+
             fl.Multiselect = false;
             fl.Filter = "All Files (*.*)|*.*";
 
@@ -265,7 +271,8 @@ namespace SmokyMailerPro
         }
 
         private void BtnSmtp_Click(object sender, EventArgs e)
-        {
+        {//Clear SMTP values
+
             TxtHost.Clear();
             TxtUser.Clear();
             TxtName.Clear();
@@ -275,28 +282,28 @@ namespace SmokyMailerPro
         }
 
         private void CheckSsl_CheckedChanged(object sender, EventArgs e)
-        {
+        {//SSL protocol
+
             SmtpClient client1 = new SmtpClient();
             if (CheckSsl.Checked)
             client1.SslProtocols = System.Security.Authentication.SslProtocols.Default;
         }
 
         private void BtnClr_Click(object sender, EventArgs e)
-        {
+        {//Change the color
+
             ColorDialog color = new ColorDialog();
             DialogResult dr = color.ShowDialog();
 
             if (dr == DialogResult.OK)
             RichTextBox1.SelectionColor = color.Color;
-
         }
 
         private void BtnClf_Click(object sender, EventArgs e)
-        {
+        {//Clear attachment
+
             TxtFile.Clear();
         }
-
-
         private void BtnLeft_Click(object sender, EventArgs e)
         {
             RichTextBox1.SelectionAlignment = HorizontalAlignment.Left;
@@ -310,6 +317,17 @@ namespace SmokyMailerPro
         private void BtnRight_Click(object sender, EventArgs e)
         {
             RichTextBox1.SelectionAlignment = HorizontalAlignment.Right;
+        }
+
+        private void CheckEncode_CheckedChanged(object sender, EventArgs e)
+        {//Replace spaces with unicode characters for RichTextBox
+
+            RichTextBox1.Text = RichTextBox1.Text.Replace(" ", "\u0008");
+
+            if(CheckHtml.Checked)
+            {
+                RichTextBox1.Text = RichTextBox1.Text.Replace(" ", "&#8;");
+            }
         }
     }
 }

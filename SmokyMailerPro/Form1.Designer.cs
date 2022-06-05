@@ -44,6 +44,10 @@
             this.LblFile = new System.Windows.Forms.Label();
             this.LstMail = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.CheckEncode = new System.Windows.Forms.CheckBox();
+            this.BtnRight = new System.Windows.Forms.Button();
+            this.BtnCenter = new System.Windows.Forms.Button();
+            this.BtnLeft = new System.Windows.Forms.Button();
             this.CheckHtml = new System.Windows.Forms.CheckBox();
             this.BtnClf = new System.Windows.Forms.Button();
             this.BtnClr = new System.Windows.Forms.Button();
@@ -76,11 +80,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.BtnLeft = new System.Windows.Forms.Button();
-            this.BtnCenter = new System.Windows.Forms.Button();
-            this.BtnRight = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.TabMail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -123,7 +122,7 @@
             this.TabMail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TabMail.Name = "TabMail";
             this.TabMail.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TabMail.Size = new System.Drawing.Size(770, 468);
+            this.TabMail.Size = new System.Drawing.Size(770, 460);
             this.TabMail.TabIndex = 0;
             this.TabMail.Text = "MAIL";
             // 
@@ -157,7 +156,7 @@
             // BtnReset
             // 
             this.BtnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReset.Location = new System.Drawing.Point(442, 430);
+            this.BtnReset.Location = new System.Drawing.Point(667, 427);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(96, 26);
             this.BtnReset.TabIndex = 9;
@@ -270,8 +269,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.checkBox1);
+            this.tabPage2.Controls.Add(this.CheckEncode);
             this.tabPage2.Controls.Add(this.BtnRight);
             this.tabPage2.Controls.Add(this.BtnCenter);
             this.tabPage2.Controls.Add(this.BtnLeft);
@@ -299,6 +297,50 @@
             this.tabPage2.Size = new System.Drawing.Size(770, 460);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BODY";
+            // 
+            // CheckEncode
+            // 
+            this.CheckEncode.AutoSize = true;
+            this.CheckEncode.Location = new System.Drawing.Point(617, 48);
+            this.CheckEncode.Name = "CheckEncode";
+            this.CheckEncode.Size = new System.Drawing.Size(109, 20);
+            this.CheckEncode.TabIndex = 21;
+            this.CheckEncode.Text = "TextEncode";
+            this.CheckEncode.UseVisualStyleBackColor = true;
+            this.CheckEncode.CheckedChanged += new System.EventHandler(this.CheckEncode_CheckedChanged);
+            // 
+            // BtnRight
+            // 
+            this.BtnRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRight.Location = new System.Drawing.Point(586, 41);
+            this.BtnRight.Name = "BtnRight";
+            this.BtnRight.Size = new System.Drawing.Size(25, 29);
+            this.BtnRight.TabIndex = 20;
+            this.BtnRight.Text = "R";
+            this.BtnRight.UseVisualStyleBackColor = true;
+            this.BtnRight.Click += new System.EventHandler(this.BtnRight_Click);
+            // 
+            // BtnCenter
+            // 
+            this.BtnCenter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCenter.Location = new System.Drawing.Point(555, 41);
+            this.BtnCenter.Name = "BtnCenter";
+            this.BtnCenter.Size = new System.Drawing.Size(25, 29);
+            this.BtnCenter.TabIndex = 19;
+            this.BtnCenter.Text = "C";
+            this.BtnCenter.UseVisualStyleBackColor = true;
+            this.BtnCenter.Click += new System.EventHandler(this.BtnCenter_Click);
+            // 
+            // BtnLeft
+            // 
+            this.BtnLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLeft.Location = new System.Drawing.Point(524, 41);
+            this.BtnLeft.Name = "BtnLeft";
+            this.BtnLeft.Size = new System.Drawing.Size(25, 29);
+            this.BtnLeft.TabIndex = 18;
+            this.BtnLeft.Text = "L";
+            this.BtnLeft.UseVisualStyleBackColor = true;
+            this.BtnLeft.Click += new System.EventHandler(this.BtnLeft_Click);
             // 
             // CheckHtml
             // 
@@ -657,58 +699,6 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker1_DoWork);
             // 
-            // BtnLeft
-            // 
-            this.BtnLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLeft.Location = new System.Drawing.Point(524, 41);
-            this.BtnLeft.Name = "BtnLeft";
-            this.BtnLeft.Size = new System.Drawing.Size(25, 29);
-            this.BtnLeft.TabIndex = 18;
-            this.BtnLeft.Text = "L";
-            this.BtnLeft.UseVisualStyleBackColor = true;
-            this.BtnLeft.Click += new System.EventHandler(this.BtnLeft_Click);
-            // 
-            // BtnCenter
-            // 
-            this.BtnCenter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCenter.Location = new System.Drawing.Point(555, 41);
-            this.BtnCenter.Name = "BtnCenter";
-            this.BtnCenter.Size = new System.Drawing.Size(25, 29);
-            this.BtnCenter.TabIndex = 19;
-            this.BtnCenter.Text = "C";
-            this.BtnCenter.UseVisualStyleBackColor = true;
-            this.BtnCenter.Click += new System.EventHandler(this.BtnCenter_Click);
-            // 
-            // BtnRight
-            // 
-            this.BtnRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRight.Location = new System.Drawing.Point(586, 41);
-            this.BtnRight.Name = "BtnRight";
-            this.BtnRight.Size = new System.Drawing.Size(25, 29);
-            this.BtnRight.TabIndex = 20;
-            this.BtnRight.Text = "R";
-            this.BtnRight.UseVisualStyleBackColor = true;
-            this.BtnRight.Click += new System.EventHandler(this.BtnRight_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(617, 48);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(54, 20);
-            this.checkBox1.TabIndex = 21;
-            this.checkBox1.Text = "ZFE";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(673, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 23);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "UrlEncode";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -788,8 +778,7 @@
         private System.Windows.Forms.Button BtnRight;
         private System.Windows.Forms.Button BtnCenter;
         private System.Windows.Forms.Button BtnLeft;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox CheckEncode;
     }
 }
 
