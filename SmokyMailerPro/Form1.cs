@@ -318,18 +318,18 @@ namespace SmokyMailerPro
         {//Replace spaces and characters with unicode characters for RichTextBox
 
             if (CheckHtml.Checked == true)
-                RichTextBox1.Text = RichTextBox1.Text.Replace(",","&#1548;");
+                RichTextBox1.Text = RichTextBox1.Text.Replace(",", "&#8218;");
 
             if (CheckEncode.Checked == false)
-                RichTextBox1.Text = RichTextBox1.Text.Replace("&#1548;", ",");
+                RichTextBox1.Text = RichTextBox1.Text.Replace("&#8218;", ",");
             
 
             if (CheckHtml.Checked == false)
-                RichTextBox1.Text = RichTextBox1.Text.Replace(",", "\u060C");
+                RichTextBox1.Text = RichTextBox1.Text.Replace(",", "\u201A");
                 RichTextBox1.Text = RichTextBox1.Text.Replace(" ", "\u00A0");
 
             if(CheckEncode.Checked == false)
-                RichTextBox1.Text = RichTextBox1.Text.Replace("\u060C", ",");
+                RichTextBox1.Text = RichTextBox1.Text.Replace("\u201A", ",");
                 RichTextBox1.Text = RichTextBox1.Text.Replace("\u00A0", " ");
         }
     }
