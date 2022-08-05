@@ -75,7 +75,7 @@ namespace SmokyMailerPro
             pictureBox1.Enabled = false;
         }
 
-        private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs ea)
         {
             CheckForIllegalCrossThreadCalls = false;
 
@@ -89,8 +89,10 @@ namespace SmokyMailerPro
                 };
 
                 client.AuthenticationMechanisms.Remove("XOAUTH2");
-                client.Connect(TxtHost.Text, int.Parse(TxtPort.Text));
+                client.ServerCertificateValidationCallback = (s, c, h, e) => true;
+                client.Connect(TxtHost.Text, int.Parse(TxtPort.Text), MailKit.Security.SecureSocketOptions.StartTlsWhenAvailable);
                 client.Authenticate(TxtUser.Text, TxtPass.Text);
+               
                 
                 for (int i = 0; i < (int)numericUpDown1.Value; i++)
                 {
@@ -118,7 +120,6 @@ namespace SmokyMailerPro
                     {
                         foreach (string str in LstMail.Items)
                         {
-
                             mime.To.Add(MailboxAddress.Parse(str));
                         }
 
@@ -283,6 +284,7 @@ namespace SmokyMailerPro
             SmtpClient client1 = new SmtpClient();
             if (CheckSsl.Checked)
                 client1.SslProtocols = System.Security.Authentication.SslProtocols.Default;
+            
         }
 
         private void BtnClr_Click(object sender, EventArgs e)

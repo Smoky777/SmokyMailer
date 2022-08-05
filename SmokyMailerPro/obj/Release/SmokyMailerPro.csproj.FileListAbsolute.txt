@@ -30,7 +30,3 @@ C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\obj\Release\SmokyMaile
 C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\obj\Release\SmokyMailerPro.csproj.CopyComplete
 C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\obj\Release\SmokyMailerPro.exe
 C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\obj\Release\SmokyMailerPro.pdb
-C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\bin\Release\SmokyMailerPro.exe.manifest
-C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\bin\Release\SmokyMailerPro.application
-C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\obj\Release\SmokyMailerPro.exe.manifest
-C:\Users\smoky\Source\Repos\SmokyMailerPro\SmokyMailerPro\obj\Release\SmokyMailerPro.application
